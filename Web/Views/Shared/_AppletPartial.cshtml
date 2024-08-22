@@ -1,0 +1,22 @@
+﻿@model dynamic
+
+@{
+    var route = new RouteValueDictionary
+    {
+        {"operacion", Model.NroOperacion}, 
+        {"timestamp", System.Diagnostics.Stopwatch.GetTimestamp()}
+    };
+
+    var token = Utils.HashCode.GetHashCode(route);
+    route.Add("token", token);
+
+    var appletPath = Url.Content("~/Applet/Applet.jar");
+    appletPath += "," + Url.Content("~/Applet/pdfbox-app-1.8.2.jar");
+    appletPath += "," + Url.Content("~/Applet/java-plugin-1.6.0.23.jar");
+}
+    
+<div id="applet-container">
+    <applet id="applet" MAYSCRIPT code="ar.gob.igj.MetPrinterService.class" archive="@appletPath" >
+	    <PARAM id="url" name="url" value="@Url.Action("TramitePago", "Reporte", route, Request.Url.Scheme, "")"/>
+ 	</applet>
+</div>

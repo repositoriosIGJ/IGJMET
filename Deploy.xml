@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Import Community Tasks -->
+  <Import Project="packages\MSBuildTasks.1.4.0.56\tools\MSBuild.Community.Tasks.Targets" />
+  <!-- End Import Community Tasks -->
+
+  <!-- Property Project -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Prod</Configuration>
+    <ProjectWebSiteName>Web</ProjectWebSiteName>
+
+    <ProjectWebSiteFile>$(ProjectWebSiteName)\$(ProjectWebSiteName).csproj</ProjectWebSiteFile>
+    <ConfigurationSchema Condition=" '$(Configuration)' == '' ">Prod</ConfigurationSchema>
+
+    <OutputPathMain>C:\Deploy\MET\$(Configuration)</OutputPathMain>
+    <OutputPathWebSite>$(OutputPathMain)\IGJMET</OutputPathWebSite>
+  </PropertyGroup>
+  <!-- End Property Project-->
+
+  <!-- Target Config -->
+  <Target Name="Build" DependsOnTargets="cleanOutputPath;BuildApp" />
+
+  <Target Name="cleanOutputPath">
+    <RemoveDir Directories="$(OutputPathWebSite)"></RemoveDir>
+  </Target>
+
+  <Target Name="BuildApp" DependsOnTargets="BuildWebSitePackage;AfterBuild;CopyBinDeployableAssemblies" />
+
+  <Target Name="BuildWebSitePackage">
+    <MSBuild Projects="$(ProjectWebSiteFile)"
+        ContinueOnError="false"
+        Targets="Package"
+        Properties="Configuration=$(Configuration);" />
+  </Target>
+
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <PackagedWebSiteFiles
+          Include="$(ProjectWebSiteName)\obj\$(Configuration)\Package\PackageTmp\**\*.*"
+          Exclude ="$(ProjectWebSiteName)\obj\$(Configuration)\Package\PackageTmp\**\*.pdb;
+          $(ProjectWebSiteName)\obj\$(Configuration)\Package\PackageTmp\**\Oracle.DataAccess.dll"> 
+      </PackagedWebSiteFiles>
+    </ItemGroup>
+
+    <Copy SourceFiles="@(PackagedWebSiteFiles)" DestinationFiles="@(PackagedWebSiteFiles->'$(OutputPathWebSite)\%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+
+  <Target Name="CopyBinDeployableAssemblies">
+    <ItemGroup>
+      <_binDeployableAssemblies Include="$(ProjectWebSiteName)\_bin_deployableAssemblies\**\*.*" />
+      <FilesForPackagingFromProject Include="%(_binDeployableAssemblies.Identity)">
+        <DestinationRelativePath>bin\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
+    </ItemGroup>
+
+    <Copy SourceFiles="@(_binDeployableAssemblies)" DestinationFolder="$(OutputPathWebSite)\bin\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy Condition="'$(OutputPathWebSite)' != ''" SourceFiles="@(_binDeployableAssemblies)" DestinationFolder="$(OutputPathWebSite)\bin\%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <!-- End Target Config -->
+
+</Project>

@@ -1,0 +1,12 @@
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\bin\Debug\Repositorio.dll.config
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\bin\Debug\Repositorio.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\bin\Debug\Repositorio.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\bin\Debug\DAO.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\bin\Debug\Domain.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\bin\Debug\EntityFramework.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\bin\Debug\DAO.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\bin\Debug\Domain.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\bin\Debug\EntityFramework.xml
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\obj\Debug\Repositorio.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\obj\Debug\Repositorio.pdb

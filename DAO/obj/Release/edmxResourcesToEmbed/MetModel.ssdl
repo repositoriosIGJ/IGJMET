@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="9.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="ENTIDAD" EntityType="Model.Store.ENTIDAD" store:Type="Tables" Schema="IGJTIMBRA" />
+    <EntitySet Name="OPERACION" EntityType="Model.Store.OPERACION" store:Type="Tables" Schema="IGJTIMBRA" />
+    <EntitySet Name="REIMPRESIONES" EntityType="Model.Store.REIMPRESIONES" store:Type="Tables" store:Schema="IGJTIMBRA" store:Name="REIMPRESIONES">
+      <DefiningQuery>SELECT 
+      "REIMPRESIONES"."ID_REIMPRESION" AS "ID_REIMPRESION", 
+      "REIMPRESIONES"."ID_USUARIO" AS "ID_USUARIO", 
+      "REIMPRESIONES"."USUARIO" AS "USUARIO", 
+      "REIMPRESIONES"."FECHA" AS "FECHA", 
+      "REIMPRESIONES"."TRAMITE" AS "TRAMITE"
+      FROM "IGJTIMBRA"."REIMPRESIONES" "REIMPRESIONES"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TIPOENTIDAD" EntityType="Model.Store.TIPOENTIDAD" store:Type="Tables" store:Schema="IGJTIMBRA" store:Name="TIPOENTIDAD">
+      <DefiningQuery>SELECT 
+      "TIPOENTIDAD"."IDTIPOENTIDAD" AS "IDTIPOENTIDAD", 
+      "TIPOENTIDAD"."DESCRIPCION" AS "DESCRIPCION"
+      FROM "IGJTIMBRA"."TIPOENTIDAD" "TIPOENTIDAD"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TIPOOPERACION" EntityType="Model.Store.TIPOOPERACION" store:Type="Tables" Schema="IGJTIMBRA" />
+    <EntitySet Name="TRANSACCION" EntityType="Model.Store.TRANSACCION" store:Type="Tables" Schema="IGJTIMBRA" />
+    <AssociationSet Name="FK_TIPOOPERACIONID" Association="Model.Store.FK_TIPOOPERACIONID">
+      <End Role="TIPOOPERACION" EntitySet="TIPOOPERACION" />
+      <End Role="OPERACION" EntitySet="OPERACION" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ENTIDAD">
+    <Key>
+      <PropertyRef Name="IDTRAN" />
+    </Key>
+    <Property Name="IDTRAN" Type="number" Nullable="false" Precision="11" />
+    <Property Name="NROCORRELATIVO" Type="number" Precision="7" />
+    <Property Name="IDTIPOENTIDAD" Type="number" Precision="5" />
+    <Property Name="NOMBRE" Type="varchar2" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="OPERACION">
+    <Key>
+      <PropertyRef Name="OPERACIONID" />
+    </Key>
+    <Property Name="OPERACIONID" Type="number" Nullable="false" />
+    <Property Name="TIPOOPERACIONID" Type="number" />
+    <Property Name="NROTRAMITE" Type="number" Nullable="false" />
+    <Property Name="NROFORMULARIO" Type="number" />
+    <Property Name="FECHA" Type="date" Nullable="false" />
+    <Property Name="USUARIOID" Type="number" Nullable="false" />
+    <Property Name="FINALIZADO" Type="number" Nullable="false" Precision="1" />
+    <Property Name="SECUENCIA" Type="number" Precision="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'IGJTIMBRA.REIMPRESIONES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="REIMPRESIONES">
+    <Key>
+      <PropertyRef Name="ID_REIMPRESION" />
+    </Key>
+    <Property Name="ID_REIMPRESION" Type="number" Nullable="false" Precision="7" />
+    <Property Name="ID_USUARIO" Type="number" Precision="10" />
+    <Property Name="USUARIO" Type="varchar2" MaxLength="255" />
+    <Property Name="FECHA" Type="varchar2" MaxLength="255" />
+    <Property Name="TRAMITE" Type="number" Precision="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'IGJTIMBRA.TIPOENTIDAD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="TIPOENTIDAD">
+    <Key>
+      <PropertyRef Name="IDTIPOENTIDAD" />
+      <PropertyRef Name="DESCRIPCION" />
+    </Key>
+    <Property Name="IDTIPOENTIDAD" Type="number" Nullable="false" Precision="5" />
+    <Property Name="DESCRIPCION" Type="varchar2" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="TIPOOPERACION">
+    <Key>
+      <PropertyRef Name="TIPOOPERACIONID" />
+    </Key>
+    <Property Name="TIPOOPERACIONID" Type="number" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TRANSACCION">
+    <Key>
+      <PropertyRef Name="IDTRANSACCION" />
+    </Key>
+    <Property Name="IDTRANSACCION" Type="number" Nullable="false" Precision="11" />
+    <Property Name="IDESTADO" Type="number" Nullable="false" Precision="2" />
+    <Property Name="IDFIRMANTE" Type="number" Nullable="false" Precision="8" />
+    <Property Name="NROCORRELATIVO" Type="number" Precision="7" />
+    <Property Name="MOTIVO" Type="varchar2" MaxLength="500" />
+    <Property Name="FECHAALTA" Type="date" Nullable="false" />
+    <Property Name="FECHAINGRESO" Type="date" />
+    <Property Name="IDNOMENCLADOR" Type="number" Nullable="false" Precision="18" />
+    <Property Name="URGENTE" Type="number" Nullable="false" />
+    <Property Name="CODBARRA" Type="varchar2" MaxLength="21" />
+    <Property Name="IMAGENCODBARRA" Type="blob" />
+  </EntityType>
+  <Association Name="FK_TIPOOPERACIONID">
+    <End Role="TIPOOPERACION" Type="Model.Store.TIPOOPERACION" Multiplicity="0..1" />
+    <End Role="OPERACION" Type="Model.Store.OPERACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOOPERACION">
+        <PropertyRef Name="TIPOOPERACIONID" />
+      </Principal>
+      <Dependent Role="OPERACION">
+        <PropertyRef Name="TIPOOPERACIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,54 @@
+﻿@model Domain.Models.VerificarCaratulaModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form-horizontal" method="post" role="form">
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend><h3>Verificar Car&aacute;tula</h3></legend>
+        <div class="form-group">
+            <p class="text-left">En esta sección usted podr&aacute; validar una car&aacute;tula, mediante su c&oacute;digo de seguridad.</p>
+        </div>
+        <div class="form-group">
+            <label for="codigoSeguridad" class="col-lg-3 control-label">Cod. Seguridad</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="codigoSeguridad" name="codigoSeguridad"
+                     placeholder="Ingrese el c&aacute;digo de seguridad ubicado en la car&aacute;tula" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-3 col-lg-10">
+                <button type="submit" class="btn btn-default">Verificar</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+@if (Model != null)
+{
+    Html.RenderPartial("VerificarCaratulaPartial", Model);
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('form').validate(
+        {
+            submitHandler: function (form) {
+                $('#loading').modal('show');
+                form.submit();
+            },
+            errorClass: "text-danger",
+            rules: {
+                codigoSeguridad: {
+                    required: true,
+                }
+            },
+            messages: {
+                codigoSeguridad: {
+                    required: "Debe ingresar un c&oacute;digo de seguridad",
+                }
+            }
+        });
+    }); 
+</script>

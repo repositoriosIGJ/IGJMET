@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1654E57-228B-4539-B36F-11EB5B4011E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Dev\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
+    <OutputPath>bin\Prod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Uat|AnyCPU'">
+    <OutputPath>bin\Uat\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gateway">
+      <HintPath>..\Web\Bin\Gateway.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Transactions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caratula.cs" />
+    <Compile Include="Common\CacheStore.cs" />
+    <Compile Include="Common\ConfigName.cs" />
+    <Compile Include="Common\UserCache.cs" />
+    <Compile Include="Contracts\Common\ICacheStore.cs" />
+    <Compile Include="Contracts\Common\ILogger.cs" />
+    <Compile Include="Contracts\Logics\ICaratulaLogic.cs" />
+    <Compile Include="Contracts\Logics\IDestraLogic.cs" />
+    <Compile Include="Contracts\Logics\IFormularioLogic.cs" />
+    <Compile Include="Contracts\Logics\IModuloTramiteLogic.cs" />
+    <Compile Include="Contracts\Logics\IOperacionLogic.cs" />
+    <Compile Include="Contracts\Logics\IPresentacionTramiteLogic.cs" />
+    <Compile Include="Contracts\Logics\ISociedadLogic.cs" />
+    <Compile Include="Contracts\Logics\ITimbradoLogic.cs" />
+    <Compile Include="Contracts\Logics\ITramiteLogic.cs" />
+    <Compile Include="Contracts\Logics\INomencladorLogic.cs" />
+    <Compile Include="Contracts\Logics\IVistaLogic.cs" />
+    <Compile Include="Contracts\Reports\ICaratulaReport.cs" />
+    <Compile Include="Contracts\Repositories\IModuloRepositorio.cs" />
+    <Compile Include="Contracts\Repositories\ITipoTramiteRepositorio.cs" />
+    <Compile Include="Contracts\Repositories\ITipoTramiteRepository.cs" />
+    <Compile Include="Contracts\Repositories\IVistaRepositorio.cs" />
+    <Compile Include="Contracts\Repositories\IGestionTramiteServiceClient.cs" />
+    <Compile Include="Contracts\Services\ICaratulaService.cs" />
+    <Compile Include="Contracts\Services\IHerramientaService.cs" />
+    <Compile Include="Contracts\Services\IReporteService.cs" />
+    <Compile Include="Contracts\Services\ISociedadService.cs" />
+    <Compile Include="Contracts\Services\ITimbradoService.cs" />
+    <Compile Include="Contracts\Services\ITramiteService.cs" />
+    <Compile Include="Entities\Entidad.cs" />
+    <Compile Include="Enums\Destino.cs" />
+    <Compile Include="Enums\EnumUtils.cs" />
+    <Compile Include="Exceptions\CustomException.cs" />
+    <Compile Include="Exceptions\NomencladorNotExistException.cs" />
+    <Compile Include="Exceptions\PresentacionNotExistException.cs" />
+    <Compile Include="Exceptions\ServiceBPMComunicationException.cs" />
+    <Compile Include="Exceptions\ServiceBPMFaultException.cs" />
+    <Compile Include="Exceptions\ServiceBPMTimeOut.cs" />
+    <Compile Include="Exceptions\ServiceEnteTimbradoException.cs" />
+    <Compile Include="Exceptions\SociedadNotExist.cs" />
+    <Compile Include="Exceptions\TimbradoAlreadyInProcess.cs" />
+    <Compile Include="Contracts\Repositories\IDestraRepositorio.cs" />
+    <Compile Include="Contracts\Repositories\IPresentacionTramiteRepositorio.cs" />
+    <Compile Include="Contracts\Repositories\IReimpresionRespositorio.cs" />
+    <Compile Include="Contracts\Repositories\ISociedadRepositorio.cs" />
+    <Compile Include="Contracts\Repositories\ITramiteDigitalRepositorio.cs" />
+    <Compile Include="Contracts\Repositories\IUsuarioRepositorio.cs" />
+    <Compile Include="Contracts\Repositories\IBPMServiceClient.cs" />
+    <Compile Include="Contracts\Repositories\IENTEServiceClient.cs" />
+    <Compile Include="Exceptions\TimbradoInsufficientValueException.cs" />
+    <Compile Include="Exceptions\TipoTramiteException.cs" />
+    <Compile Include="Exceptions\TramiteNotExistException.cs" />
+    <Compile Include="Exceptions\TrazabilidadNotExistException.cs" />
+    <Compile Include="Exceptions\UserNotExistException.cs" />
+    <Compile Include="Exceptions\VistaNotExistException.cs" />
+    <Compile Include="Logics\DestraLogic.cs" />
+    <Compile Include="Logics\FormularioLogic.cs" />
+    <Compile Include="Logics\ModuloTramiteLogic.cs" />
+    <Compile Include="Logics\NomencladorLogic.cs" />
+    <Compile Include="Logics\OperacionLogic.cs" />
+    <Compile Include="Logics\PresentacionTramiteLogic.cs" />
+    <Compile Include="Logics\CaratulaLogic.cs" />
+    <Compile Include="Logics\SociedadLogic.cs" />
+    <Compile Include="Logics\TimbradoLogic.cs" />
+    <Compile Include="Logics\TramiteAgregarTimbradoLogic.cs" />
+    <Compile Include="Logics\TramiteBaseLogic.cs" />
+    <Compile Include="Logics\TramiteLogic.cs" />
+    <Compile Include="Logics\TramiteNuevoGratuitoLogic.cs" />
+    <Compile Include="Logics\TramiteNuevoLogic.cs" />
+    <Compile Include="Logics\VistaLogic.cs" />
+    <Compile Include="Models\PresentacionModel.cs" />
+    <Compile Include="Models\FormularioModel.cs" />
+    <Compile Include="Models\ReporteModel.cs" />
+    <Compile Include="Models\SociedadModel.cs" />
+    <Compile Include="Models\TramiteModel.cs" />
+    <Compile Include="Models\VerificarCaratulaModel.cs" />
+    <Compile Include="ModuloTramite.cs" />
+    <Compile Include="Models\ProcesoModel.cs" />
+    <Compile Include="Reimpresion.cs" />
+    <Compile Include="RutaEnum.cs" />
+    <Compile Include="Sociedad.cs" />
+    <Compile Include="Exceptions\FormularioNotExistException.cs" />
+    <Compile Include="Exceptions\ServiceEnteComunicationException.cs" />
+    <Compile Include="Exceptions\ServiceEnteException.cs" />
+    <Compile Include="Exceptions\ServiceEnteTimeOutException.cs" />
+    <Compile Include="Exceptions\TimbradoNotExistException.cs" />
+    <Compile Include="Formulario.cs" />
+    <Compile Include="Contracts\Mappers\IMapper.cs" />
+    <Compile Include="Contracts\Repositories\IFormularioRepositorio.cs" />
+    <Compile Include="Contracts\Repositories\INomencladorRepositorio.cs" />
+    <Compile Include="Contracts\Repositories\IOperacionRepositorio.cs" />
+    <Compile Include="Contracts\Repositories\ITimbradoRepositorio.cs" />
+    <Compile Include="Contracts\Repositories\ITramiteRepositorio.cs" />
+    <Compile Include="Nomenclador.cs" />
+    <Compile Include="Operacion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Timbrado.cs" />
+    <Compile Include="TipoSociedad.cs" />
+    <Compile Include="TipoTramite.cs" />
+    <Compile Include="TipoTramiteGratuito.cs" />
+    <Compile Include="Tramite.cs" />
+    <Compile Include="PresentacionTramite.cs" />
+    <Compile Include="TramiteDigital.cs" />
+    <Compile Include="TramiteGratuito.cs" />
+    <Compile Include="TrazabilidadTramite.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="Vista.cs" />
+    <Compile Include="VistaTramite.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Diagrama\MET.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Domain.Sociedad">
+    <Position X="8" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAgAAAAAAAACAAAAAAAEAAAAA=</HashCode>
+      <FileName>Sociedad.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TipoSociedad" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Tramites" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.Nomenclador">
+    <Position X="4.25" Y="2" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAEAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nomenclador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.TipoSociedad">
+    <Position X="8" Y="2" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipoSociedad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Tramite">
+    <Position X="4.5" Y="4.75" Width="2" />
+    <AssociationLine Name="Vistas" Type="Domain.VistaTramite" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.688" Y="4.75" />
+        <Point X="4.688" Y="4.375" />
+        <Point X="1.5" Y="4.375" />
+        <Point X="1.5" Y="3.546" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQCQAAAAAAAAAAEAAAAIAAAAAAAAACAAAAAAAAABAAA=</HashCode>
+      <FileName>Tramite.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Nomenclador" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Vistas" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Domain.VistaTramite">
+    <Position X="0.5" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>VistaTramite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.PresentacionTramite">
+    <Position X="0.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAEAgAAIACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PresentacionTramite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Timbrado">
+    <Position X="4.5" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAACQQEIIAAAAAAgAAIAAAYQAIAAAAAAAAAAACAAAg=</HashCode>
+      <FileName>Timbrado.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Estado" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Domain.Formulario">
+    <Position X="8" Y="7.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAIgAAAAEAhAAAAAACQQAAACAAAAACAQggAAA=</HashCode>
+      <FileName>Formulario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Operacion">
+    <Position X="12" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAEAgAAIAAACBIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Operacion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TipoOperacion" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="Domain.TipoOperacion">
+    <Position X="12" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEgAAIAAAAgAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Operacion.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Domain.Estado">
+    <Position X="0.5" Y="7.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAA=</HashCode>
+      <FileName>Timbrado.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

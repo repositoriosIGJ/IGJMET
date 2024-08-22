@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="urn:vav" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" targetNamespace="urn:vav" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="urn:vav">
+      <s:element name="ConsultaTimbrado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TimParametro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaTimbradoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaTimbradoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InformaPago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pagParametro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InformaPagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InformaPagoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InformaBoletaDeposito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pagParametro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InformaBoletaDepositoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InformaBoletaDepositoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InformaTasa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pagParametro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InformaTasaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InformaTasaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaTimbradoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaTimbrado" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTimbradoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaTimbradoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InformaPagoSoapIn">
+    <wsdl:part name="parameters" element="tns:InformaPago" />
+  </wsdl:message>
+  <wsdl:message name="InformaPagoSoapOut">
+    <wsdl:part name="parameters" element="tns:InformaPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InformaBoletaDepositoSoapIn">
+    <wsdl:part name="parameters" element="tns:InformaBoletaDeposito" />
+  </wsdl:message>
+  <wsdl:message name="InformaBoletaDepositoSoapOut">
+    <wsdl:part name="parameters" element="tns:InformaBoletaDepositoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InformaTasaSoapIn">
+    <wsdl:part name="parameters" element="tns:InformaTasa" />
+  </wsdl:message>
+  <wsdl:message name="InformaTasaSoapOut">
+    <wsdl:part name="parameters" element="tns:InformaTasaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTimbradoHttpGetIn">
+    <wsdl:part name="TimParametro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTimbradoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InformaPagoHttpGetIn">
+    <wsdl:part name="pagParametro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InformaPagoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InformaBoletaDepositoHttpGetIn">
+    <wsdl:part name="pagParametro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InformaBoletaDepositoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InformaTasaHttpGetIn">
+    <wsdl:part name="pagParametro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InformaTasaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTimbradoHttpPostIn">
+    <wsdl:part name="TimParametro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTimbradoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InformaPagoHttpPostIn">
+    <wsdl:part name="pagParametro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InformaPagoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InformaBoletaDepositoHttpPostIn">
+    <wsdl:part name="pagParametro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InformaBoletaDepositoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InformaTasaHttpPostIn">
+    <wsdl:part name="pagParametro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InformaTasaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceEnteSoap">
+    <wsdl:operation name="ConsultaTimbrado">
+      <wsdl:input message="tns:ConsultaTimbradoSoapIn" />
+      <wsdl:output message="tns:ConsultaTimbradoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InformaPago">
+      <wsdl:input message="tns:InformaPagoSoapIn" />
+      <wsdl:output message="tns:InformaPagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InformaBoletaDeposito">
+      <wsdl:input message="tns:InformaBoletaDepositoSoapIn" />
+      <wsdl:output message="tns:InformaBoletaDepositoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InformaTasa">
+      <wsdl:input message="tns:InformaTasaSoapIn" />
+      <wsdl:output message="tns:InformaTasaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceEnteHttpGet">
+    <wsdl:operation name="ConsultaTimbrado">
+      <wsdl:input message="tns:ConsultaTimbradoHttpGetIn" />
+      <wsdl:output message="tns:ConsultaTimbradoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InformaPago">
+      <wsdl:input message="tns:InformaPagoHttpGetIn" />
+      <wsdl:output message="tns:InformaPagoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InformaBoletaDeposito">
+      <wsdl:input message="tns:InformaBoletaDepositoHttpGetIn" />
+      <wsdl:output message="tns:InformaBoletaDepositoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InformaTasa">
+      <wsdl:input message="tns:InformaTasaHttpGetIn" />
+      <wsdl:output message="tns:InformaTasaHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceEnteHttpPost">
+    <wsdl:operation name="ConsultaTimbrado">
+      <wsdl:input message="tns:ConsultaTimbradoHttpPostIn" />
+      <wsdl:output message="tns:ConsultaTimbradoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InformaPago">
+      <wsdl:input message="tns:InformaPagoHttpPostIn" />
+      <wsdl:output message="tns:InformaPagoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InformaBoletaDeposito">
+      <wsdl:input message="tns:InformaBoletaDepositoHttpPostIn" />
+      <wsdl:output message="tns:InformaBoletaDepositoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InformaTasa">
+      <wsdl:input message="tns:InformaTasaHttpPostIn" />
+      <wsdl:output message="tns:InformaTasaHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceEnteSoap" type="tns:ServiceEnteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaTimbrado">
+      <soap:operation soapAction="urn:vav/ConsultaTimbrado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformaPago">
+      <soap:operation soapAction="urn:vav/InformaPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformaBoletaDeposito">
+      <soap:operation soapAction="urn:vav/InformaBoletaDeposito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformaTasa">
+      <soap:operation soapAction="urn:vav/InformaTasa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceEnteHttpGet" type="tns:ServiceEnteHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ConsultaTimbrado">
+      <http:operation location="/ConsultaTimbrado" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformaPago">
+      <http:operation location="/InformaPago" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformaBoletaDeposito">
+      <http:operation location="/InformaBoletaDeposito" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformaTasa">
+      <http:operation location="/InformaTasa" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceEnteHttpPost" type="tns:ServiceEnteHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ConsultaTimbrado">
+      <http:operation location="/ConsultaTimbrado" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformaPago">
+      <http:operation location="/InformaPago" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformaBoletaDeposito">
+      <http:operation location="/InformaBoletaDeposito" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformaTasa">
+      <http:operation location="/InformaTasa" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceEnte">
+    <wsdl:port name="ServiceEnteSoap" binding="tns:ServiceEnteSoap">
+      <soap:address location="http://192.168.1.2/webservicevb/consultaente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceEnteHttpGet" binding="tns:ServiceEnteHttpGet">
+      <http:address location="http://192.168.1.2/webservicevb/consultaente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceEnteHttpPost" binding="tns:ServiceEnteHttpPost">
+      <http:address location="http://192.168.1.2/webservicevb/consultaente.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

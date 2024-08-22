@@ -1,0 +1,23 @@
+﻿<b class="text-danger">El servicio de impresion no se encuentra disponible, por favor verifique si se encuentra iniciado</b>
+<a href="javascript:refreshPrinter();">Reintentar</a>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        function refreshPrinter() {
+            checkPrinterSocket(callbackOK, callbackErr);
+        }
+
+        function callbackOK() {
+            $('#btn-submit').removeAttr('disabled');
+            $('#msg-printer').hide();
+        }
+
+        function callbackErr() {
+            $('#btn-submit').attr('disabled', 'disabled');
+            $('#msg-printer').show();
+        }
+
+        refreshPrinter();
+    });
+</script>

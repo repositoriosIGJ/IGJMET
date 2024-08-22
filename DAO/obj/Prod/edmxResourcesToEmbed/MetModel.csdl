@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MetModel" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="OPERACION" EntityType="Model.OPERACION" />
+    <EntitySet Name="TIPOOPERACION" EntityType="Model.TIPOOPERACION" />
+    <EntitySet Name="TRANSACCION" EntityType="Model.TRANSACCION" />
+    <AssociationSet Name="FK_TIPOOPERACIONID" Association="Model.FK_TIPOOPERACIONID">
+      <End Role="TIPOOPERACION" EntitySet="TIPOOPERACION" />
+      <End Role="OPERACION" EntitySet="OPERACION" />
+    </AssociationSet>
+    <EntitySet Name="REIMPRESIONES" EntityType="Model.REIMPRESIONES" />
+    <EntitySet Name="ENTIDAD" EntityType="Model.ENTIDAD" />
+    <EntitySet Name="TIPOENTIDAD" EntityType="Model.TIPOENTIDAD" />
+  </EntityContainer>
+  <EntityType Name="OPERACION">
+    <Key>
+      <PropertyRef Name="OPERACIONID" />
+    </Key>
+    <Property Name="OPERACIONID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="TIPOOPERACIONID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="NROTRAMITE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="NROFORMULARIO" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="USUARIOID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="FINALIZADO" Type="Int16" Nullable="false" />
+    <Property Name="SECUENCIA" Type="Int16" />
+    <NavigationProperty Name="TIPOOPERACION" Relationship="Model.FK_TIPOOPERACIONID" FromRole="OPERACION" ToRole="TIPOOPERACION" />
+  </EntityType>
+  <EntityType Name="TIPOOPERACION">
+    <Key>
+      <PropertyRef Name="TIPOOPERACIONID" />
+    </Key>
+    <Property Name="TIPOOPERACIONID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="OPERACION" Relationship="Model.FK_TIPOOPERACIONID" FromRole="TIPOOPERACION" ToRole="OPERACION" />
+  </EntityType>
+  <EntityType Name="TRANSACCION">
+    <Key>
+      <PropertyRef Name="IDTRANSACCION" />
+    </Key>
+    <Property Name="IDTRANSACCION" Type="Int64" Nullable="false" />
+    <Property Name="IDESTADO" Type="Int16" Nullable="false" />
+    <Property Name="IDFIRMANTE" Type="Int32" Nullable="false" />
+    <Property Name="NROCORRELATIVO" Type="Int32" />
+    <Property Name="MOTIVO" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="FECHAALTA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FECHAINGRESO" Type="DateTime" Precision="0" />
+    <Property Name="IDNOMENCLADOR" Type="Int64" Nullable="false" />
+    <Property Name="URGENTE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CODBARRA" Type="String" MaxLength="21" Unicode="false" FixedLength="false" />
+    <Property Name="IMAGENCODBARRA" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_TIPOOPERACIONID">
+    <End Role="TIPOOPERACION" Type="Model.TIPOOPERACION" Multiplicity="0..1" />
+    <End Role="OPERACION" Type="Model.OPERACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOOPERACION">
+        <PropertyRef Name="TIPOOPERACIONID" />
+      </Principal>
+      <Dependent Role="OPERACION">
+        <PropertyRef Name="TIPOOPERACIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="REIMPRESIONES">
+    <Key>
+      <PropertyRef Name="ID_REIMPRESION" />
+    </Key>
+    <Property Type="Int32" Name="ID_REIMPRESION" Nullable="false" />
+    <Property Type="Int32" Name="ID_USUARIO" />
+    <Property Type="String" Name="USUARIO" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FECHA" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="TRAMITE" />
+  </EntityType>
+  <EntityType Name="ENTIDAD">
+    <Key>
+      <PropertyRef Name="IDTRAN" />
+    </Key>
+    <Property Type="Int64" Name="IDTRAN" Nullable="false" />
+    <Property Type="Int32" Name="NROCORRELATIVO" />
+    <Property Type="Int16" Name="IDTIPOENTIDAD" />
+    <Property Type="String" Name="NOMBRE" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TIPOENTIDAD">
+    <Key>
+      <PropertyRef Name="IDTIPOENTIDAD" />
+      <PropertyRef Name="DESCRIPCION" />
+    </Key>
+    <Property Type="Int16" Name="IDTIPOENTIDAD" Nullable="false" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

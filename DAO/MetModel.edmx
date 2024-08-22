@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="9.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="ENTIDAD" EntityType="Model.Store.ENTIDAD" store:Type="Tables" Schema="IGJTIMBRA" />
+          <EntitySet Name="OPERACION" EntityType="Model.Store.OPERACION" store:Type="Tables" Schema="IGJTIMBRA" />
+          <EntitySet Name="REIMPRESIONES" EntityType="Model.Store.REIMPRESIONES" store:Type="Tables" store:Schema="IGJTIMBRA" store:Name="REIMPRESIONES">
+            <DefiningQuery>SELECT 
+      "REIMPRESIONES"."ID_REIMPRESION" AS "ID_REIMPRESION", 
+      "REIMPRESIONES"."ID_USUARIO" AS "ID_USUARIO", 
+      "REIMPRESIONES"."USUARIO" AS "USUARIO", 
+      "REIMPRESIONES"."FECHA" AS "FECHA", 
+      "REIMPRESIONES"."TRAMITE" AS "TRAMITE"
+      FROM "IGJTIMBRA"."REIMPRESIONES" "REIMPRESIONES"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TIPOENTIDAD" EntityType="Model.Store.TIPOENTIDAD" store:Type="Tables" store:Schema="IGJTIMBRA" store:Name="TIPOENTIDAD">
+            <DefiningQuery>SELECT 
+      "TIPOENTIDAD"."IDTIPOENTIDAD" AS "IDTIPOENTIDAD", 
+      "TIPOENTIDAD"."DESCRIPCION" AS "DESCRIPCION"
+      FROM "IGJTIMBRA"."TIPOENTIDAD" "TIPOENTIDAD"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TIPOOPERACION" EntityType="Model.Store.TIPOOPERACION" store:Type="Tables" Schema="IGJTIMBRA" />
+          <EntitySet Name="TRANSACCION" EntityType="Model.Store.TRANSACCION" store:Type="Tables" Schema="IGJTIMBRA" />
+          <AssociationSet Name="FK_TIPOOPERACIONID" Association="Model.Store.FK_TIPOOPERACIONID">
+            <End Role="TIPOOPERACION" EntitySet="TIPOOPERACION" />
+            <End Role="OPERACION" EntitySet="OPERACION" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ENTIDAD">
+          <Key>
+            <PropertyRef Name="IDTRAN" />
+          </Key>
+          <Property Name="IDTRAN" Type="number" Nullable="false" Precision="11" />
+          <Property Name="NROCORRELATIVO" Type="number" Precision="7" />
+          <Property Name="IDTIPOENTIDAD" Type="number" Precision="5" />
+          <Property Name="NOMBRE" Type="varchar2" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="OPERACION">
+          <Key>
+            <PropertyRef Name="OPERACIONID" />
+          </Key>
+          <Property Name="OPERACIONID" Type="number" Nullable="false" />
+          <Property Name="TIPOOPERACIONID" Type="number" />
+          <Property Name="NROTRAMITE" Type="number" Nullable="false" />
+          <Property Name="NROFORMULARIO" Type="number" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="USUARIOID" Type="number" Nullable="false" />
+          <Property Name="FINALIZADO" Type="number" Nullable="false" Precision="1" />
+          <Property Name="SECUENCIA" Type="number" Precision="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'IGJTIMBRA.REIMPRESIONES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="REIMPRESIONES">
+          <Key>
+            <PropertyRef Name="ID_REIMPRESION" />
+          </Key>
+          <Property Name="ID_REIMPRESION" Type="number" Nullable="false" Precision="7" />
+          <Property Name="ID_USUARIO" Type="number" Precision="10" />
+          <Property Name="USUARIO" Type="varchar2" MaxLength="255" />
+          <Property Name="FECHA" Type="varchar2" MaxLength="255" />
+          <Property Name="TRAMITE" Type="number" Precision="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'IGJTIMBRA.TIPOENTIDAD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="TIPOENTIDAD">
+          <Key>
+            <PropertyRef Name="IDTIPOENTIDAD" />
+            <PropertyRef Name="DESCRIPCION" />
+          </Key>
+          <Property Name="IDTIPOENTIDAD" Type="number" Nullable="false" Precision="5" />
+          <Property Name="DESCRIPCION" Type="varchar2" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TIPOOPERACION">
+          <Key>
+            <PropertyRef Name="TIPOOPERACIONID" />
+          </Key>
+          <Property Name="TIPOOPERACIONID" Type="number" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TRANSACCION">
+          <Key>
+            <PropertyRef Name="IDTRANSACCION" />
+          </Key>
+          <Property Name="IDTRANSACCION" Type="number" Nullable="false" Precision="11" />
+          <Property Name="IDESTADO" Type="number" Nullable="false" Precision="2" />
+          <Property Name="IDFIRMANTE" Type="number" Nullable="false" Precision="8" />
+          <Property Name="NROCORRELATIVO" Type="number" Precision="7" />
+          <Property Name="MOTIVO" Type="varchar2" MaxLength="500" />
+          <Property Name="FECHAALTA" Type="date" Nullable="false" />
+          <Property Name="FECHAINGRESO" Type="date" />
+          <Property Name="IDNOMENCLADOR" Type="number" Nullable="false" Precision="18" />
+          <Property Name="URGENTE" Type="number" Nullable="false" />
+          <Property Name="CODBARRA" Type="varchar2" MaxLength="21" />
+          <Property Name="IMAGENCODBARRA" Type="blob" />
+        </EntityType>
+        <Association Name="FK_TIPOOPERACIONID">
+          <End Role="TIPOOPERACION" Type="Model.Store.TIPOOPERACION" Multiplicity="0..1" />
+          <End Role="OPERACION" Type="Model.Store.OPERACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOOPERACION">
+              <PropertyRef Name="TIPOOPERACIONID" />
+            </Principal>
+            <Dependent Role="OPERACION">
+              <PropertyRef Name="TIPOOPERACIONID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MetModel" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="OPERACION" EntityType="Model.OPERACION" />
+          <EntitySet Name="TIPOOPERACION" EntityType="Model.TIPOOPERACION" />
+          <EntitySet Name="TRANSACCION" EntityType="Model.TRANSACCION" />
+          <AssociationSet Name="FK_TIPOOPERACIONID" Association="Model.FK_TIPOOPERACIONID">
+            <End Role="TIPOOPERACION" EntitySet="TIPOOPERACION" />
+            <End Role="OPERACION" EntitySet="OPERACION" />
+          </AssociationSet>
+          <EntitySet Name="REIMPRESIONES" EntityType="Model.REIMPRESIONES" />
+          <EntitySet Name="ENTIDAD" EntityType="Model.ENTIDAD" />
+          <EntitySet Name="TIPOENTIDAD" EntityType="Model.TIPOENTIDAD" />
+        </EntityContainer>
+        <EntityType Name="OPERACION">
+          <Key>
+            <PropertyRef Name="OPERACIONID" />
+          </Key>
+          <Property Name="OPERACIONID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TIPOOPERACIONID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NROTRAMITE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NROFORMULARIO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="USUARIOID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="FINALIZADO" Type="Int16" Nullable="false" />
+          <Property Name="SECUENCIA" Type="Int16" />
+          <NavigationProperty Name="TIPOOPERACION" Relationship="Model.FK_TIPOOPERACIONID" FromRole="OPERACION" ToRole="TIPOOPERACION" />
+        </EntityType>
+        <EntityType Name="TIPOOPERACION">
+          <Key>
+            <PropertyRef Name="TIPOOPERACIONID" />
+          </Key>
+          <Property Name="TIPOOPERACIONID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="OPERACION" Relationship="Model.FK_TIPOOPERACIONID" FromRole="TIPOOPERACION" ToRole="OPERACION" />
+        </EntityType>
+        <EntityType Name="TRANSACCION">
+          <Key>
+            <PropertyRef Name="IDTRANSACCION" />
+          </Key>
+          <Property Name="IDTRANSACCION" Type="Int64" Nullable="false" />
+          <Property Name="IDESTADO" Type="Int16" Nullable="false" />
+          <Property Name="IDFIRMANTE" Type="Int32" Nullable="false" />
+          <Property Name="NROCORRELATIVO" Type="Int32" />
+          <Property Name="MOTIVO" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FECHAALTA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FECHAINGRESO" Type="DateTime" Precision="0" />
+          <Property Name="IDNOMENCLADOR" Type="Int64" Nullable="false" />
+          <Property Name="URGENTE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CODBARRA" Type="String" MaxLength="21" Unicode="false" FixedLength="false" />
+          <Property Name="IMAGENCODBARRA" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_TIPOOPERACIONID">
+          <End Role="TIPOOPERACION" Type="Model.TIPOOPERACION" Multiplicity="0..1" />
+          <End Role="OPERACION" Type="Model.OPERACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOOPERACION">
+              <PropertyRef Name="TIPOOPERACIONID" />
+            </Principal>
+            <Dependent Role="OPERACION">
+              <PropertyRef Name="TIPOOPERACIONID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="REIMPRESIONES">
+          <Key>
+            <PropertyRef Name="ID_REIMPRESION" />
+          </Key>
+          <Property Type="Int32" Name="ID_REIMPRESION" Nullable="false" />
+          <Property Type="Int32" Name="ID_USUARIO" />
+          <Property Type="String" Name="USUARIO" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FECHA" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="TRAMITE" />
+        </EntityType>
+        <EntityType Name="ENTIDAD">
+          <Key>
+            <PropertyRef Name="IDTRAN" />
+          </Key>
+          <Property Type="Int64" Name="IDTRAN" Nullable="false" />
+          <Property Type="Int32" Name="NROCORRELATIVO" />
+          <Property Type="Int16" Name="IDTIPOENTIDAD" />
+          <Property Type="String" Name="NOMBRE" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TIPOENTIDAD">
+          <Key>
+            <PropertyRef Name="IDTIPOENTIDAD" />
+            <PropertyRef Name="DESCRIPCION" />
+          </Key>
+          <Property Type="Int16" Name="IDTIPOENTIDAD" Nullable="false" />
+          <Property Type="String" Name="DESCRIPCION" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="MetModel">
+          <EntitySetMapping Name="OPERACION">
+            <EntityTypeMapping TypeName="Model.OPERACION">
+              <MappingFragment StoreEntitySet="OPERACION">
+                <ScalarProperty Name="OPERACIONID" ColumnName="OPERACIONID" />
+                <ScalarProperty Name="TIPOOPERACIONID" ColumnName="TIPOOPERACIONID" />
+                <ScalarProperty Name="NROTRAMITE" ColumnName="NROTRAMITE" />
+                <ScalarProperty Name="NROFORMULARIO" ColumnName="NROFORMULARIO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="USUARIOID" ColumnName="USUARIOID" />
+                <ScalarProperty Name="FINALIZADO" ColumnName="FINALIZADO" />
+                <ScalarProperty Name="SECUENCIA" ColumnName="SECUENCIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOOPERACION">
+            <EntityTypeMapping TypeName="Model.TIPOOPERACION">
+              <MappingFragment StoreEntitySet="TIPOOPERACION">
+                <ScalarProperty Name="TIPOOPERACIONID" ColumnName="TIPOOPERACIONID" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANSACCION">
+            <EntityTypeMapping TypeName="Model.TRANSACCION">
+              <MappingFragment StoreEntitySet="TRANSACCION">
+                <ScalarProperty Name="IDTRANSACCION" ColumnName="IDTRANSACCION" />
+                <ScalarProperty Name="IDESTADO" ColumnName="IDESTADO" />
+                <ScalarProperty Name="IDFIRMANTE" ColumnName="IDFIRMANTE" />
+                <ScalarProperty Name="NROCORRELATIVO" ColumnName="NROCORRELATIVO" />
+                <ScalarProperty Name="MOTIVO" ColumnName="MOTIVO" />
+                <ScalarProperty Name="FECHAALTA" ColumnName="FECHAALTA" />
+                <ScalarProperty Name="FECHAINGRESO" ColumnName="FECHAINGRESO" />
+                <ScalarProperty Name="IDNOMENCLADOR" ColumnName="IDNOMENCLADOR" />
+                <ScalarProperty Name="URGENTE" ColumnName="URGENTE" />
+                <ScalarProperty Name="CODBARRA" ColumnName="CODBARRA" />
+                <ScalarProperty Name="IMAGENCODBARRA" ColumnName="IMAGENCODBARRA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REIMPRESIONES">
+            <EntityTypeMapping TypeName="Model.REIMPRESIONES">
+              <MappingFragment StoreEntitySet="REIMPRESIONES">
+                <ScalarProperty Name="TRAMITE" ColumnName="TRAMITE" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="ID_REIMPRESION" ColumnName="ID_REIMPRESION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ENTIDAD">
+            <EntityTypeMapping TypeName="Model.ENTIDAD">
+              <MappingFragment StoreEntitySet="ENTIDAD">
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="IDTIPOENTIDAD" ColumnName="IDTIPOENTIDAD" />
+                <ScalarProperty Name="NROCORRELATIVO" ColumnName="NROCORRELATIVO" />
+                <ScalarProperty Name="IDTRAN" ColumnName="IDTRAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOENTIDAD">
+            <EntityTypeMapping TypeName="Model.TIPOENTIDAD">
+              <MappingFragment StoreEntitySet="TIPOENTIDAD">
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="IDTIPOENTIDAD" ColumnName="IDTIPOENTIDAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

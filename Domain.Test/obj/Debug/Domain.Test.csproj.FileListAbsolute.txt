@@ -1,0 +1,17 @@
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\Domain.Test.dll.config
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\Domain.Test.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\Domain.Test.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\Domain.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\Moq.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\Repositorio.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\DAO.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\Oracle.DataAccess.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\EntityFramework.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\Domain.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\Repositorio.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\Moq.xml
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\DAO.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\bin\Debug\EntityFramework.xml
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\obj\Debug\Domain.Test.csprojResolveAssemblyReference.cache
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\obj\Debug\Domain.Test.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Domain.Test\obj\Debug\Domain.Test.pdb

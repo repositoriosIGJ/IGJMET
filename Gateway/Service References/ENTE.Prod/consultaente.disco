@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://192.168.1.2/webservicevb/consultaente.asmx?wsdl" docRef="http://192.168.1.2/webservicevb/consultaente.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://192.168.1.2/webservicevb/consultaente.asmx" xmlns:q1="urn:vav" binding="q1:ServiceEnteSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

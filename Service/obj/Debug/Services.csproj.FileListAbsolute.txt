@@ -1,0 +1,13 @@
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\bin\Debug\Services.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\bin\Debug\Services.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\bin\Debug\Domain.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\bin\Debug\Utils.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\bin\Debug\log4net.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\bin\Debug\Oracle.DataAccess.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\bin\Debug\Zen.Barcode.Core.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\bin\Debug\Domain.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\bin\Debug\Utils.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\bin\Debug\log4net.xml
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\obj\Debug\Services.csprojResolveAssemblyReference.cache
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\obj\Debug\Services.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\obj\Debug\Services.pdb

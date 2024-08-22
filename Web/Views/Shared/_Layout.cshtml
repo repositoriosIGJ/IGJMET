@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>IGJ | Mesa Entrada de trámites</title>
+
+
+    <!-- Bootstrap core CSS -->
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/css")
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    
+    <script type="text/javascript" src="~/Scripts/printer-util.js"></script>
+    <!-- Custom styles for this template -->
+
+    <link rel="icon" href="~/Images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="~/Images/favicon.ico" type="image/x-icon">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+        <header class="page-header">
+            @Html.Partial("_Header")
+        </header>
+
+        @Html.Partial("_LoaderPartial")
+
+        <!-- Begin page content -->
+        <div class="page-container">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div class="page-footer">
+        @Html.Partial("_Footer")
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var id = getCurrentPath().toLowerCase();
+            $('#' + id).addClass('active');
+
+        });
+
+        function getCurrentPath() {
+            var currentPath = $(location).attr('pathname').split('/');
+            currentPath = currentPath[currentPath.length - 1];
+            return currentPath;
+        }
+    </script>
+</body>
+</html>

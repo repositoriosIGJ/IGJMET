@@ -1,0 +1,66 @@
+﻿@model Domain.Models.TramiteModel
+@{
+    ViewBag.Title = "Trámites";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="frm-tramit" class="form-horizontal" method="post" role="form">
+    <fieldset>
+        <legend><h3>Verificar trámite registrado</h3></legend>
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <p class="text-left">En esta sección usted podrá verificar la descripcion de un trámite</p>
+        </div>
+        <div class="form-group">
+            <label for="txt-tram" class="col-lg-3 control-label">Nro de trámite</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="txt-tram" name="nroTramite"
+                     placeholder="Ingrese el número de trámite" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-3 col-lg-3">
+                <button type="submit" id="btn-submit" class="btn btn-default">Confirmar</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+@if (Model != null)
+{
+    <hr />
+    Html.RenderPartial("TramiteReportePartial", Model);
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#frm-tramit').validate(
+        {
+            errorClass: 'text-danger',
+            submitHandler: function (form) {
+                $('#loading').modal('show');
+                form.submit();
+            },
+            rules: {
+                nroTramite: {
+                    number: true,
+                    required: true,
+                    maxlength: 18
+                }
+            },
+            messages: {
+                nroTramite: {
+                    required: "Campo requerido",
+                    number: "Debe ingresar un valor numerico",
+                    maxlength: "Debe ingresar un número de menor dígito"
+                },
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).parent().removeClass('has-success').addClass('has-error');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).parent().removeClass('has-error').addClass('has-success');
+            }
+        });
+    });
+</script>

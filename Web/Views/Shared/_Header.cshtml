@@ -1,0 +1,50 @@
+﻿<div class="row">
+    <div class="col-md-4">
+        <img src="@Url.Content("~/Images/logoigj.png")" />
+    </div>
+    <div class="col-md-4">
+        <img id="img-ar" src="@Url.Content("~/Images/logo-jus.png")" />
+    </div>
+</div>
+<!-- navbar -->
+<div class="navbar navbar-default bs-docs-nav">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <em>@Html.ActionLink("MET", "Index", "Home", null, new { Class = "navbar-brand" })</em>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li id="tramite" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ingreso de Trámite<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Con Timbrado", "TramitePago", "Tramite")</li>
+                        <li>@Html.ActionLink("Gratuito", "TramiteNoPago", "Tramite")</li>
+                    </ul>
+                </li>
+                <li id="agregartimbrado">@Html.ActionLink("Adicionar Timbrado", "AgregarTimbrado", "Tramite")</li>
+                <li id="reimprimircaratula">@Html.ActionLink("Reimpresión", "ReimprimirCaratula", "Reporte")</li>
+                <li id="recepcionvista">@Html.ActionLink("Recepción Vista", "RecepcionVista", "Tramite")</li>
+                @*<li id="utilidades" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Utilidades<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li>@Html.ActionLink("Reporte Tramites", "Tramites", "Reporte")</li>
+                      <li>@Html.ActionLink("Verificar Caratula", "VerificarCaratula", "Herramienta")</li>
+                      <li class="divider"></li>
+                      <li>@Html.ActionLink("Ver Usuarios", "Usuarios", "Herramienta")</li>
+                    </ul>
+                  </li>*@
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <p class="navbar-text"><span class="glyphicon glyphicon-user"></span>&nbsp;@User.Identity.Name</p>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>

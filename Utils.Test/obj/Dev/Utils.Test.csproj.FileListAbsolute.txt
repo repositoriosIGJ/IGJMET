@@ -1,0 +1,14 @@
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\bin\Dev\Utils.Test.dll.config
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\bin\Dev\Utils.Test.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\bin\Dev\Utils.Test.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\bin\Dev\Utils.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\bin\Dev\Domain.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\bin\Dev\log4net.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\bin\Dev\Oracle.DataAccess.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\bin\Dev\Zen.Barcode.Core.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\bin\Dev\Utils.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\bin\Dev\Domain.pdb
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\bin\Dev\log4net.xml
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\obj\Dev\Utils.Test.csprojResolveAssemblyReference.cache
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\obj\Dev\Utils.Test.dll
+C:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils.Test\obj\Dev\Utils.Test.pdb

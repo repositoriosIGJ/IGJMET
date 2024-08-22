@@ -1,0 +1,97 @@
+﻿@model Domain.Models.TramiteModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="form-pago" class="form-horizontal" method="post" role="form">
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>
+            <h3>Adicionar Timbrado</h3>
+        </legend>
+        <div class="form-group">
+            <p class="text-left">
+                En esta sección usted podrá adicionar un timbrado a un trámite existente.
+             Para ello ingrese los datos a continuación
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="txt-tram" class="col-lg-3 control-label">Nro de trámite</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="txt-tram" name="nroTramite"
+                    placeholder="Ingrese el número de trámite" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txt-form" class="col-lg-3 control-label">Nro de formulario</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="txt-form" name="codigoFormulario"
+                    placeholder="Ingrese el codigo de barra al pie del formulario" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txt-form" class="col-lg-3 control-label">Imprime</label>
+            <div class="col-lg-2">
+                @Html.CheckBoxFor(x => x.Imprime)
+            </div>
+        </div>
+        <div class="form-group" id="pnl-submit">
+            <div class="col-lg-offset-3 col-lg-10">
+                <button type="submit" id="btn-submit" class="btn btn-default">Confirmar</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10" id="pnl-checked">
+            </div>
+        </div>
+    </fieldset>
+    @if (Model != null)
+    {
+        Html.RenderPartial("TramiteResultadoPartial", Model, new ViewDataDictionary { { "Printer", @Model.Imprime } });
+    }
+</form>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('form').validate(
+        {
+            errorClass: 'text-danger',
+            submitHandler: function (form) {
+                $('#loading').modal('show');
+                form.submit();
+            },
+            rules: {
+                nroTramite: {
+                    number: true,
+                    required: true,
+                    maxlength: 18
+                },
+                codigoFormulario: {
+                    minlength: 21,
+                    maxlength: 21,
+                    required: true,
+                }
+            },
+            messages: {
+                nroTramite: {
+                    required: "Campo requerido",
+                    number: "Debe ingresar un valor numerico",
+                    maxlength: "Debe ingresar un número de menor dígito"
+                },
+                codigoFormulario: {
+                    required: "Debe ingresar un código de 21 caracteres para continuar",
+                    minlength: "Debe ingresar un código de 21 caracteres para continuar",
+                    maxlength: "Debe ingresar un código de 21 caracteres para continuar"
+                }
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).parent().removeClass('has-success').addClass('has-error');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).parent().removeClass('has-error').addClass('has-success');
+            }
+        });
+    });
+</script>

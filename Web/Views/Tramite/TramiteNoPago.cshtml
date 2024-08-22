@@ -1,0 +1,428 @@
+﻿@model Domain.Models.TramiteModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string cookieToken, formToken;
+    AntiForgery.GetTokens(null, out cookieToken, out formToken);
+    var token = String.Format("{0}:{1}", cookieToken, formToken);
+}
+
+<form class="form-horizontal" method="post" role="form">
+    @Html.HiddenFor(x => x.CodigoTipoDeTramite)
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>
+            <h3>Tramite Gratuito</h3>
+        </legend>
+        <div class="form-group">
+            <p class="text-left">
+                En esta secci&oacute;n usted podr&aacute; registrar el inicio de un tr&aacute;mite gratuito ingresando un correlativo.
+             Para ello ingrese los datos a continuaci&oacute;n
+            </p>
+        </div>
+        <div class="form-group" id="change">
+            <label for="nroCorrelativo" class="col-lg-3 control-label">Nro. Correlativo</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="txt-correlativo" name="nroCorrelativo"
+                    placeholder="Ingrese el nro. correlativo " required>
+            </div>
+        </div>
+        <div class="form-group" id="pnl-submit">
+            <div class="col-lg-offset-3 col-lg-10">
+                <button type="submit" id="btn-submit" class="btn btn-default">Verificar</button>
+                <button type="button" id="btn-busqueda" class="btn btn-default" title="Formulario de busqueda"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10" id="pnl-checked">
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+@if (Model != null)
+{
+    Html.RenderPartial("TramiteResultadoPartial", Model, new ViewDataDictionary { { "Printer", true } });
+}
+else
+{
+    <!-- Modal -->
+    <div class="modal fade" id="modal-panel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Datos de Entidad</h4>
+                </div>
+                <div class="modal-body" id="modal-generacion" style="display: none">
+                    <div class="form-group">
+                        <label class="control-label">Nro. Correlativo:</label>
+                        <em id="txt-corrGen"></em>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Razon Social:</label>
+                        <em id="txt-rsGen"></em>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Tipo Societario:</label>
+                        <em id="txt-tsGen"></em>
+                    </div>
+                </div>
+                <div class="modal-body" id="modal-success">
+                    <div class="form-group">
+                        <label class="control-label">Nro. Correlativo:</label>
+                        <em id="txt-corr"></em>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Razon Social:</label>
+                        <em id="txt-rs"></em>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Tipo Societario:</label>
+                        <em id="txt-ts"></em>
+                    </div>
+                </div>
+                <div class="modal-body" id="modal-danger">
+                    <div class="form-group">
+                        <label class="control-label">Descripción:</label>
+                        <em id="txt-ms"></em>
+                    </div>
+                </div>
+
+              <!--  <div class="modal-body" id="modal-tipotramite">
+                    <div class="form-group">
+                        <label>Tipo de trámite</label>
+                        @Html.DropDownListFor(x => x.SelectedTipoTramiteId, new SelectList(ViewBag.TiposTramite, "Codigo", "Descripcion"), "", new { style = "width: 433px;", @class = "required" })
+                        <label id="tipoTramiteError" for="SelectedTipoTramiteId" class="text-danger" style="display: none">Debe ingresar un tipo de trámite</label>
+                    </div>
+                </div> -->
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-default" id="btn-conf">Iniciar Tramite</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->      
+    
+    
+    <div class="modal fade" id="modal-busqueda" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Busqueda de correlativo</h4>
+                </div>
+                <div class="modal-body" id="busqueda-body">
+                    <div id="busqueda-success">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" id="txt-nombre" name="busquedaNombre"
+                                placeholder="Ingrese nombre " class="form-control" required>
+                            <label id="nombreError" for="txt-nombre" class="text-danger" style="display: none">Debe ingresar un filtro nombre con mas de 3 caracteres</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tipo Sociedad</label>
+                            @Html.DropDownListFor(x => x.SelectedTipoSociedadCode, new SelectList(@ViewBag.TiposSociedad, "Codigo", "Descripcion"), new { style = "width: 438px;" })
+
+                        </div>
+
+                        <div class="form-group">
+                            <button type="button" class="btn btn-default" id="btn-busquedaEfectiva" style="float: right;">Buscar</button>
+                        </div>
+
+                        <div id="table-div" style="display: none">
+                            <div class="dataTables_wrapper" role="grid">
+                                <table id="target_table" class="table table-hover ">
+                                    <thead style="display: block">
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Correlativo</th>
+                                            <th>Alias</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody style="height: 200px; overflow: auto; display: block">
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <button type="button" class="btn btn-default" id="btn-seleccionar" data-dismiss="modal">Seleccionar correlativo</button>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div id="busqueda-danger" style="display: none">
+                        <div class="form-group">
+                            <h4>No se encontraron resultados de la busqueda desea generar un nuevo correlativo?</h4>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="button" class="btn btn-default" id="btn-generar" style="float: right;">Generar correlativo</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    
+   
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            //$('#btn-conf').click(function () {
+            //    $('form').submit();
+            //});
+
+            $('#btn-busqueda').click(function () {
+                buscarCorrelativo();
+            });
+
+            $('#btn-busquedaEfectiva').click(function () {
+                busquedaEfectiva();
+            });
+
+            $('#btn-seleccionar').click(function () {
+                seleccionarCorrelativo();
+            });
+
+            $('#btn-generar').click(function () {
+                generarCorrelativo();
+            });
+
+            $("#btn-conf").click(function () {
+
+
+                var val = $("#SelectedTipoTramiteId option:selected").val();
+                $("#CodigoTipoDeTramite").val(val)
+
+                if (val == "") {
+                    $('#SelectedTipoTramiteId').parent().removeClass('has-success').addClass('has-error');
+                    $('#tipoTramiteError').show();
+                }
+                else {
+                    $('#SelectedTipoTramiteId').parent().removeClass('has-error').addClass('has-success');
+                    $('#tipoTramiteError').hide();
+                    $('form').submit();
+                }
+
+
+
+            });
+
+            $('form').validate(
+            {
+                submitHandler: function (form) {
+                    if ($('#modal-panel').is(':visible') == false) {
+                        $('#loading').modal('show');
+                        validarVista();
+                    }
+                    else {
+                        $('#modal-panel').modal('hide');
+                        $('#loading').modal('show');
+
+                        var val = $("#SelectedTipoTramiteId option:selected").val();
+                        $("#CodigoTipoDeTramite").val(val)
+
+                        //if (val == "") {
+                        //    $('#SelectedTipoTramiteId').parent().removeClass('has-success').addClass('has-error');
+                        //    $('#tipoTramiteError').show();
+                        //}
+                        //else
+                        //{
+                        //    $('#SelectedTipoTramiteId').parent().removeClass('has-error').addClass('has-success');
+                        //    $('#tipoTramiteError').hide();
+                        //    form.submit();
+                        //}
+                        form.submit();
+
+                    }
+                },
+                errorClass: "text-danger",
+                rules: {
+                    nroCorrelativo: {
+                        required: true,
+                        number: true,
+                        maxlength: 18,
+                    }
+                },
+                messages: {
+                    nroCorrelativo: {
+                        number: "Debe ingresar un valor numerico",
+                        required: "Debe ingresar un nro correlativo",
+                        maxlength: "Debe ingresar un número de menor dígito"
+                    }
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).parent().removeClass('has-success').addClass('has-error');
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).parent().removeClass('has-error').addClass('has-success');
+                }
+            });
+        });
+
+        function validarVista() {
+            var correlativo = $('#txt-correlativo').val();
+
+            $.ajax({
+                type: 'get',
+                dataType: 'json',
+                url: '@Url.Action("ValidarSociedad", "Sociedad")',
+                data: { NroCorrelativo: correlativo },
+                headers: { RequestVerificationToken: '@token' },
+                success: function (data) {
+                    $('.modal-body').hide();
+
+                    if (data.Resultado == 0) {
+                        $('#txt-corr').text(data.NroCorrelativo);
+                        $('#txt-rs').text(data.RazonSocial);
+                        $('#txt-ts').text(data.Tipo);
+                        $('.modal-title').text('Datos de Entidad');
+                        $('#btn-conf').show();
+                        $('#modal-success').show();
+                        $('#modal-tipotramite').show();
+                    }
+                    else {
+                        $('.modal-title').text('Error en la operacion');
+                        $('#txt-ms').text(data.Mensaje);
+                        $('#btn-conf').hide();
+                        $('#modal-danger').show();
+                    }
+
+                    $('#loading').modal('hide');
+                    $('#modal-panel').modal('show');
+                }
+            });
+        }
+
+
+        function buscarCorrelativo() {
+            $('#modal-busqueda').modal('show');
+            $('#busqueda-success').show();
+            $('#busqueda-body').show();
+        }
+
+        function busquedaEfectiva() {
+
+            var nombre = $('#txt-nombre').val();
+
+            if (nombre.length < 3) {
+
+                $('#txt-nombre').parent().removeClass('has-success').addClass('has-error');
+                $('#nombreError').show();
+            } else {
+
+                $('#txt-nombre').parent().removeClass('has-error').addClass('has-success');
+                $('#nombreError').hide();
+                var tipoSociedadId = $("#SelectedTipoSociedadCode").val();
+                $.ajax({
+                    type: 'get',
+                    dataType: 'json',
+                    url: '@Url.Action("Buscar", "Tramite")',
+                    data: { nombre: nombre, codigoTipoSociedad: tipoSociedadId },
+                    success: function (data) {
+
+                        if (data.length > 0) {
+                            generateTable(data);
+                            $("#busqueda-danger").hide();
+                        } else {
+                            $("#busqueda-danger").show();
+                            $("#table-div").hide();
+                        }
+
+                    }
+                });
+            }
+        }
+
+        function generateTable(data) {
+            $("#table-div").show();
+            var tbl_body = "";
+            var tbl_test = "";
+
+            $.each(data, function (index) {
+
+                tbl_test += "<td><input type='radio' name='correlativos' value=" + data[index].NroCorrelativo + "></td>";
+                tbl_test += "<td>" + data[index].NroCorrelativo + "</td>";
+                tbl_test += "<td>" + data[index].Nombre + "</td>";
+
+                tbl_body += "<tr>" + tbl_test + "</tr>";
+                var tbl_test = "";
+            })
+
+            $("#target_table tbody").html(tbl_body);
+
+        }
+
+
+        function seleccionarCorrelativo() {
+
+            var correlativo = $('input[name=correlativos]:checked').val()
+            if (correlativo != null) {
+                $("#txt-correlativo").val(correlativo);
+            }
+
+        }
+
+        function generarCorrelativo() {
+
+            var nombre = $('#txt-nombre').val();
+
+            if (nombre.length < 3) {
+
+                $('#txt-nombre').parent().removeClass('has-success').addClass('has-error');
+                $('#nombreError').show();
+            } else {
+
+                $('#txt-nombre').parent().removeClass('has-error').addClass('has-success');
+                $('#nombreError').hide();
+
+                var tipoSociedadId = $("#SelectedTipoSociedadCode").val();
+
+                $.ajax({
+                    type: 'get',
+                    dataType: 'json',
+                    url: '@Url.Action("GenerarCorrelativo", "Tramite")',
+                    data: { nombre: nombre, codigoTipoSociedad: tipoSociedadId },
+                    success: function (data) {
+
+                        if (data > 0) {
+                            $("#txt-correlativo").val(data);
+
+                            $('#modal-busqueda').modal('hide');
+                            $('#txt-corrGen').text(data);
+                            ////SI ES GENERADO ES SIEMPRE UNA SOCIEDAD NO REGISTRADA
+                            $('#txt-rsGen').text("SOCIEDAD NO REGISTRADA");
+                            $('#txt-tsGen').text($("#SelectedTipoSociedadCode option:selected").text());
+                            
+                            $('.modal-title').text('Datos de Entidad');
+                            $('#btn-conf').show();
+                            $('#modal-generacion').show();
+                            $('#modal-panel').modal('show');
+                            $('#modal-success').hide();
+                            $('#modal-danger').hide();
+
+                        } else {
+
+                        }
+
+                    }
+                });
+            }
+
+
+        }
+
+
+    </script>
+}

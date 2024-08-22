@@ -1,0 +1,77 @@
+﻿@model Domain.Models.ReporteModel
+@{
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Reporte Timbrado</title>
+        @Styles.Render("~/Content/bootstrap")
+        @Scripts.Render("~/bundles/jquery")
+        <link href="~/Content/printer.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="book">
+            <div class="page">
+                <div class="subpage">
+                    <ul class="bc-list">
+                        <li>
+                            <p class="vertical-text">Formulario</p>
+                            <p class="vertical-text" style="margin-left: -60px;">1000123245</p>
+                            <p class="vertical-text" style="margin-left: -120px;">21-Ago-2011</p>
+                            <p class="vertical-text" style="margin-left: -180px;">0001</p>
+                        </li>
+                        <li id="bc-vista"></li>
+                        <li id="bc-has"></li>
+                        <li id="bc-tramit"></li>
+                    </ul>
+                </div>    
+            </div>
+        </div>
+
+@*        <h4 class="text-center">TRAMITE CON TIMBRADO</h4>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.NroTramite):
+            @Html.DisplayFor(model => model.NroTramite)
+        </div>
+    
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.NroFormulario):
+            @Html.DisplayFor(model => model.NroFormulario)
+        </div>
+    
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Urgente)
+            @Html.DisplayFor(model => model.Urgente)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.NroCorrelativo):
+            @Html.DisplayFor(model => model.NroCorrelativo)
+        </div>
+    
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.TipoSocietario):
+            @Html.DisplayFor(model => model.TipoSocietario)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Denominacion):
+            @Html.DisplayFor(model => model.Denominacion)
+        </div>
+
+        <div id="bc"></div>
+        *@
+
+        <script type="text/javascript" src="~/Scripts/jquery-barcode.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#bc-vista').barcode("0001", "code39");
+                $('#bc-has').barcode("193YKY", "code39");
+                $('#bc-tramit').barcode("9.000.215", "code39");
+            });
+        </script>
+    </body>
+</html>

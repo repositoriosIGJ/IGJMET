@@ -1,0 +1,54 @@
+
+2024-06-25 12:08:54,613 [5] INFO  - GET-/-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:09:07,643 [7] INFO  - GET-/Reporte/ReimprimirCaratula-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:09:14,350 [7] INFO  - POST-/Reporte/ReimprimirCaratula-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:09:30,790 [13] INFO  - GET-/Reporte/TramitePago/9413944/63854914167/8B8E0FD9CDE0A37DA886335670FFA91E38F73449-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:15:01,808 [29] INFO  - POST-/Reporte/ReimprimirCaratula-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:15:06,037 [6] INFO  - GET-/Reporte/TramitePago/9413963/63854914504/919A590E7731E9972B3CD84DEA33D38882C0A49B-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:15:34,591 [5] INFO  - GET-/-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:15:38,644 [5] INFO  - GET-/Reporte/ReimprimirCaratula-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:15:43,938 [14] INFO  - POST-/Reporte/ReimprimirCaratula-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:15:46,358 [6] INFO  - GET-/Reporte/TramitePago/9413966/63854914546/825A878A3B8E952240E3048E968537144E2F73CB-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:21:38,652 [5] INFO  - GET-/-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:21:43,134 [5] INFO  - GET-/Reporte/ReimprimirCaratula-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:21:49,294 [5] INFO  - POST-/Reporte/ReimprimirCaratula-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:21:53,514 [6] INFO  - GET-/Reporte/ReimprimirCaratula-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:40:17,964 [5] INFO  - GET-/-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:40:21,802 [5] INFO  - GET-/Reporte/ReimprimirCaratula-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:40:27,053 [14] INFO  - POST-/Reporte/ReimprimirCaratula-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+
+
+2024-06-25 12:40:33,439 [5] INFO  - GET-/Reporte/TramitePago/9414016/63854916033/5681B6C4A3F7C01D298C052DC998348B3B5E9BE7-::1-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36-JUSTICIA\amalerba 
+

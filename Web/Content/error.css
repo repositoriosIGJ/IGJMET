@@ -1,0 +1,13 @@
+﻿body {
+    background-color: #252526;
+    color: #ffffff;
+}
+
+.container {
+    margin-top: 10%;
+}
+
+.container img {
+    margin-top: 200px;
+    margin-left: 20px;
+}

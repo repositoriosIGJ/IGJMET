@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="form-pago" class="form-horizontal" method="post" role="form">
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>
+            <h3>Inicio</h3>
+        </legend>
+        <div class="form-group">
+            <p class="text-center lead">
+                Bienvenido al Sistema de Mesa de Entrada de Trámites.
+                <br>
+                Seleccione una opción del menú para comenzar a operar
+            </p>
+        </div>
+    </fieldset>
+</form>

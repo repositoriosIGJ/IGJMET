@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="MetModel">
+    <EntitySetMapping Name="OPERACION">
+      <EntityTypeMapping TypeName="Model.OPERACION">
+        <MappingFragment StoreEntitySet="OPERACION">
+          <ScalarProperty Name="OPERACIONID" ColumnName="OPERACIONID" />
+          <ScalarProperty Name="TIPOOPERACIONID" ColumnName="TIPOOPERACIONID" />
+          <ScalarProperty Name="NROTRAMITE" ColumnName="NROTRAMITE" />
+          <ScalarProperty Name="NROFORMULARIO" ColumnName="NROFORMULARIO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="USUARIOID" ColumnName="USUARIOID" />
+          <ScalarProperty Name="FINALIZADO" ColumnName="FINALIZADO" />
+          <ScalarProperty Name="SECUENCIA" ColumnName="SECUENCIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOOPERACION">
+      <EntityTypeMapping TypeName="Model.TIPOOPERACION">
+        <MappingFragment StoreEntitySet="TIPOOPERACION">
+          <ScalarProperty Name="TIPOOPERACIONID" ColumnName="TIPOOPERACIONID" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSACCION">
+      <EntityTypeMapping TypeName="Model.TRANSACCION">
+        <MappingFragment StoreEntitySet="TRANSACCION">
+          <ScalarProperty Name="IDTRANSACCION" ColumnName="IDTRANSACCION" />
+          <ScalarProperty Name="IDESTADO" ColumnName="IDESTADO" />
+          <ScalarProperty Name="IDFIRMANTE" ColumnName="IDFIRMANTE" />
+          <ScalarProperty Name="NROCORRELATIVO" ColumnName="NROCORRELATIVO" />
+          <ScalarProperty Name="MOTIVO" ColumnName="MOTIVO" />
+          <ScalarProperty Name="FECHAALTA" ColumnName="FECHAALTA" />
+          <ScalarProperty Name="FECHAINGRESO" ColumnName="FECHAINGRESO" />
+          <ScalarProperty Name="IDNOMENCLADOR" ColumnName="IDNOMENCLADOR" />
+          <ScalarProperty Name="URGENTE" ColumnName="URGENTE" />
+          <ScalarProperty Name="CODBARRA" ColumnName="CODBARRA" />
+          <ScalarProperty Name="IMAGENCODBARRA" ColumnName="IMAGENCODBARRA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REIMPRESIONES">
+      <EntityTypeMapping TypeName="Model.REIMPRESIONES">
+        <MappingFragment StoreEntitySet="REIMPRESIONES">
+          <ScalarProperty Name="TRAMITE" ColumnName="TRAMITE" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_REIMPRESION" ColumnName="ID_REIMPRESION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ENTIDAD">
+      <EntityTypeMapping TypeName="Model.ENTIDAD">
+        <MappingFragment StoreEntitySet="ENTIDAD">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="IDTIPOENTIDAD" ColumnName="IDTIPOENTIDAD" />
+          <ScalarProperty Name="NROCORRELATIVO" ColumnName="NROCORRELATIVO" />
+          <ScalarProperty Name="IDTRAN" ColumnName="IDTRAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOENTIDAD">
+      <EntityTypeMapping TypeName="Model.TIPOENTIDAD">
+        <MappingFragment StoreEntitySet="TIPOENTIDAD">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="IDTIPOENTIDAD" ColumnName="IDTIPOENTIDAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

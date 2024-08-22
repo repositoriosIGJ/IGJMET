@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PermissionStructure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Group Name="Home" Controller="Home">
+    <Item Name="Index" Action="Index">
+      <Rol>IGJ-AltaSociedadComercial-InspectorPreca-BPM</Rol>
+      <Rol>IGJ-AltaSociedadComercial-AgenteCertificante-BPM</Rol>
+    </Item>
+  </Group>
+  <Group Name="Tramites" Controller="Tramite">
+    <Item Name="TramitePago" Action="TramitePago">
+      <Rol>IGJ-AltaSociedadComercial-MesaEntradas-BPM</Rol>
+    </Item>
+    <Item Name="TramiteNoPago" Action="TramiteNoPago">
+      <Rol>IGJ-AltaSociedadComercial-MesaEntradas-BPM</Rol>
+    </Item>
+  </Group>
+  <Group Name="Reporte" Controller="Reporte">
+    <Item Name="ReimprimirCaratula" Action="ReimprimirCaratula">
+      <Rol>IGJ-AltaSociedadComercial-InspectorPreca-BPM</Rol>
+      <Rol>IGJ-AltaSociedadComercial-AgenteCertificante-BPM</Rol>
+    </Item>
+  </Group>
+</PermissionStructure>

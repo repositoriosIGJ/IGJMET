@@ -1,0 +1,44 @@
+﻿@using Utils
+@model dynamic
+
+@{
+
+    var time = Timers.ConvertToUnixTimestamp(DateTime.Now);
+    var inToken = String.Format("{0}:{1}", Model.NroOperacion, time);
+    var outToken = HashCode.GetHashCodeFromString(inToken);
+    var uri = Url.RouteUrl("Report", new { operacion = Model.NroOperacion, timestamp = time, token = outToken }, Request.Url.Scheme);
+}
+
+
+<script type="text/javascript">
+    var connection;
+
+    $(window).load(function () {
+
+        print();
+
+    });
+
+    function windowsprint() {
+
+        var pdf = document.getElementById('printframe');
+        pdf.contentWindow.print();
+      
+    }
+
+    function print() {
+        $("#printframe").remove();
+
+        var ifrm = document.createElement("IFRAME");
+        ifrm.id = "printframe";
+
+        document.body.appendChild(ifrm);
+        ifrm.src = '@uri';
+     
+        ifrm.onload = function () {
+            ifrm.focus();
+            windowsprint();
+        };
+       
+    };
+</script>

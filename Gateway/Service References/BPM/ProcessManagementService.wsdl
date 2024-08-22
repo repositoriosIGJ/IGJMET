@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:tns="http://ws.core.bpm.jus.gov.ar/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="ProcessManagementService" targetNamespace="http://ws.core.bpm.jus.gov.ar/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.core.bpm.jus.gov.ar/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="cancelProcessInstance" type="tns:cancelProcessInstance" />
+      <xs:element name="cancelProcessInstanceResponse" type="tns:cancelProcessInstanceResponse" />
+      <xs:element name="completeWorkItem" type="tns:completeWorkItem" />
+      <xs:element name="completeWorkItemResponse" type="tns:completeWorkItemResponse" />
+      <xs:element name="executeWorkItem" type="tns:executeWorkItem" />
+      <xs:element name="executeWorkItemResponse" type="tns:executeWorkItemResponse" />
+      <xs:element name="findProcessIntances" type="tns:findProcessIntances" />
+      <xs:element name="findProcessIntancesPagination" type="tns:findProcessIntancesPagination" />
+      <xs:element name="findProcessIntancesPaginationResponse" type="tns:findProcessIntancesPaginationResponse" />
+      <xs:element name="findProcessIntancesResponse" type="tns:findProcessIntancesResponse" />
+      <xs:element name="getActiveNodesInfo" type="tns:getActiveNodesInfo" />
+      <xs:element name="getActiveNodesInfoResponse" type="tns:getActiveNodesInfoResponse" />
+      <xs:element name="getHistoryOfProcess" type="tns:getHistoryOfProcess" />
+      <xs:element name="getHistoryOfProcessResponse" type="tns:getHistoryOfProcessResponse" />
+      <xs:element name="getNodeInstances" type="tns:getNodeInstances" />
+      <xs:element name="getNodeInstancesResponse" type="tns:getNodeInstancesResponse" />
+      <xs:element name="getNodesOfProcessDefinition" type="tns:getNodesOfProcessDefinition" />
+      <xs:element name="getNodesOfProcessDefinitionResponse" type="tns:getNodesOfProcessDefinitionResponse" />
+      <xs:element name="getProcessDefinitionsForAdmin" type="tns:getProcessDefinitionsForAdmin" />
+      <xs:element name="getProcessDefinitionsForAdminResponse" type="tns:getProcessDefinitionsForAdminResponse" />
+      <xs:element name="getProcessDefinitionsForUser" type="tns:getProcessDefinitionsForUser" />
+      <xs:element name="getProcessDefinitionsForUserResponse" type="tns:getProcessDefinitionsForUserResponse" />
+      <xs:element name="getProcessForMonitor" type="tns:getProcessForMonitor" />
+      <xs:element name="getProcessForMonitorResponse" type="tns:getProcessForMonitorResponse" />
+      <xs:element name="getProcessImage" type="tns:getProcessImage" />
+      <xs:element name="getProcessImageResponse" type="tns:getProcessImageResponse" />
+      <xs:element name="getProcessInstances" type="tns:getProcessInstances" />
+      <xs:element name="getProcessInstancesPagination" type="tns:getProcessInstancesPagination" />
+      <xs:element name="getProcessInstancesPaginationResponse" type="tns:getProcessInstancesPaginationResponse" />
+      <xs:element name="getProcessInstancesResponse" type="tns:getProcessInstancesResponse" />
+      <xs:element name="getProcessWithVariables" type="tns:getProcessWithVariables" />
+      <xs:element name="getProcessWithVariablesResponse" type="tns:getProcessWithVariablesResponse" />
+      <xs:element name="getServiceConfiguration" type="tns:getServiceConfiguration" />
+      <xs:element name="getServiceConfigurationResponse" type="tns:getServiceConfigurationResponse" />
+      <xs:element name="newInstanceWithVars" type="tns:newInstanceWithVars" />
+      <xs:element name="newInstanceWithVarsResponse" type="tns:newInstanceWithVarsResponse" />
+      <xs:element name="signalEvent" type="tns:signalEvent" />
+      <xs:element name="signalEventResponse" type="tns:signalEventResponse" />
+      <xs:element name="upgradeProcessInstance" type="tns:upgradeProcessInstance" />
+      <xs:element name="upgradeProcessInstanceResponse" type="tns:upgradeProcessInstanceResponse" />
+      <xs:complexType name="getProcessDefinitionsForUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessDefinitionsForUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:processDefinition" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="processDefinition">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="url" type="xs:string" />
+          <xs:element minOccurs="0" name="urlCancel" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="upgradeProcessInstance">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element name="processInstanceId" type="xs:long" />
+          <xs:element minOccurs="0" name="definitionId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="mapping" type="tns:mapping" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mapping">
+        <xs:sequence>
+          <xs:element name="mapped" type="xs:long" />
+          <xs:element minOccurs="0" name="node" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="upgradeProcessInstanceResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="executeWorkItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element name="workitemId" type="xs:long" />
+          <xs:element minOccurs="0" name="processDefinitionId" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="executeWorkItemResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="newInstanceWithVars">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="definitionId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="processVars" type="tns:pair" />
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pair">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="key" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="tns:type" />
+          <xs:element minOccurs="0" name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="newInstanceWithVarsResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getNodeInstances">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element name="processInstanceId" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getNodeInstancesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pair" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessInstances">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="processDefinitionId" type="xs:string" />
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessInstancesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:processInstance" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="processInstance">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createdBy" type="xs:string" />
+          <xs:element minOccurs="0" name="definitionId" type="xs:string" />
+          <xs:element minOccurs="0" name="description" type="xs:string" />
+          <xs:element minOccurs="0" name="id" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="vars" nillable="true" type="tns:pair" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="completeWorkItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="processDefinitionId" type="xs:string" />
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element name="processInstanceId" type="xs:long" />
+          <xs:element name="workItemId" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="results" type="tns:pair" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="completeWorkItemResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getProcessWithVariables">
+        <xs:sequence>
+          <xs:element name="processInstanceId" type="xs:long" />
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessWithVariablesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:processInstance" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findProcessIntances">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element minOccurs="0" name="processDefinitionId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="criteria" type="tns:pair" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findProcessIntancesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getHistoryOfProcess">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="processDefinitionIds" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="criteria" type="tns:pair" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="variables" type="tns:pair" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getHistoryOfProcessResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:historyOfProcessInstances" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="historyOfProcessInstances">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="endProcess" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastProcessDefinitionId" type="xs:string" />
+          <xs:element minOccurs="0" name="processDefinitionId" type="xs:string" />
+          <xs:element minOccurs="0" name="processInstanceId" type="xs:long" />
+          <xs:element minOccurs="0" name="startProcess" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="taskResume" nillable="true" type="tns:taskResume" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="variables" nillable="true" type="tns:pair" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="taskResume">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="assignedUser" type="xs:string" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="status" type="tns:status" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="taskAssignment" nillable="true" type="tns:taskAssignment" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="taskAssignment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="actualOwner" type="xs:string" />
+          <xs:element minOccurs="0" name="claimOn" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="completeOn" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="releaseOn" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findProcessIntancesPagination">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element minOccurs="0" name="processDefinitionId" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="criteria" type="tns:pair" />
+          <xs:element minOccurs="0" name="pagination" type="tns:pagination" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pagination">
+        <xs:sequence>
+          <xs:element name="count" type="xs:int" />
+          <xs:element name="offset" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findProcessIntancesPaginationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:processInstances" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="processInstances">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="processInstances" nillable="true" type="xs:long" />
+          <xs:element name="totalcount" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessInstancesPagination">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="processDefinitionId" type="xs:string" />
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element minOccurs="0" name="pagination" type="tns:pagination" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessInstancesPaginationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:processInstancesWithVars" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="processInstancesWithVars">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="processInstances" nillable="true" type="tns:processInstance" />
+          <xs:element name="totalcount" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getNodesOfProcessDefinition">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element minOccurs="0" name="processDefinitionId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getNodesOfProcessDefinitionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:node" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="node">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="inputVarNames" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="nodeName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="outputVarNames" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="xs:string" />
+          <xs:element minOccurs="0" name="uniqueId" type="xs:string" />
+          <xs:element minOccurs="0" name="variableName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelProcessInstance">
+        <xs:sequence>
+          <xs:element name="processInstanceId" type="xs:long" />
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelProcessInstanceResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getProcessDefinitionsForAdmin">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessDefinitionsForAdminResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:processDefinition" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getServiceConfiguration">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getServiceConfigurationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessImage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="processDefinitionId" type="xs:string" />
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessImageResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessForMonitor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getProcessForMonitorResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:processDefinition" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getActiveNodesInfo">
+        <xs:sequence>
+          <xs:element name="processInstanceId" type="xs:long" />
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getActiveNodesInfoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:nodeInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="nodeInfo">
+        <xs:sequence>
+          <xs:element name="height" type="xs:int" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element name="posX" type="xs:int" />
+          <xs:element name="posY" type="xs:int" />
+          <xs:element minOccurs="0" name="taskName" type="xs:string" />
+          <xs:element name="width" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="signalEvent">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string" />
+          <xs:element name="processInstanceId" type="xs:long" />
+          <xs:element minOccurs="0" name="signal" type="xs:string" />
+          <xs:element minOccurs="0" name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="signalEventResponse">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:simpleType name="type">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="String" />
+          <xs:enumeration value="Integer" />
+          <xs:enumeration value="Boolean" />
+          <xs:enumeration value="Float" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="status">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Created" />
+          <xs:enumeration value="Ready" />
+          <xs:enumeration value="Reserved" />
+          <xs:enumeration value="InProgress" />
+          <xs:enumeration value="Suspended" />
+          <xs:enumeration value="Completed" />
+          <xs:enumeration value="Failed" />
+          <xs:enumeration value="Error" />
+          <xs:enumeration value="Exited" />
+          <xs:enumeration value="Obsolete" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getProcessDefinitionsForUser">
+    <wsdl:part name="parameters" element="tns:getProcessDefinitionsForUser" />
+  </wsdl:message>
+  <wsdl:message name="executeWorkItem">
+    <wsdl:part name="parameters" element="tns:executeWorkItem" />
+  </wsdl:message>
+  <wsdl:message name="getProcessDefinitionsForUserResponse">
+    <wsdl:part name="parameters" element="tns:getProcessDefinitionsForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessInstances">
+    <wsdl:part name="parameters" element="tns:getProcessInstances" />
+  </wsdl:message>
+  <wsdl:message name="completeWorkItem">
+    <wsdl:part name="parameters" element="tns:completeWorkItem" />
+  </wsdl:message>
+  <wsdl:message name="completeWorkItemResponse">
+    <wsdl:part name="parameters" element="tns:completeWorkItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessForMonitorResponse">
+    <wsdl:part name="parameters" element="tns:getProcessForMonitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessWithVariablesResponse">
+    <wsdl:part name="parameters" element="tns:getProcessWithVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="findProcessIntancesPagination">
+    <wsdl:part name="parameters" element="tns:findProcessIntancesPagination" />
+  </wsdl:message>
+  <wsdl:message name="getProcessInstancesPagination">
+    <wsdl:part name="parameters" element="tns:getProcessInstancesPagination" />
+  </wsdl:message>
+  <wsdl:message name="getNodesOfProcessDefinition">
+    <wsdl:part name="parameters" element="tns:getNodesOfProcessDefinition" />
+  </wsdl:message>
+  <wsdl:message name="cancelProcessInstance">
+    <wsdl:part name="parameters" element="tns:cancelProcessInstance" />
+  </wsdl:message>
+  <wsdl:message name="getProcessDefinitionsForAdmin">
+    <wsdl:part name="parameters" element="tns:getProcessDefinitionsForAdmin" />
+  </wsdl:message>
+  <wsdl:message name="getProcessImageResponse">
+    <wsdl:part name="parameters" element="tns:getProcessImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="newInstanceWithVarsResponse">
+    <wsdl:part name="parameters" element="tns:newInstanceWithVarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHistoryOfProcessResponse">
+    <wsdl:part name="parameters" element="tns:getHistoryOfProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessImage">
+    <wsdl:part name="parameters" element="tns:getProcessImage" />
+  </wsdl:message>
+  <wsdl:message name="getProcessInstancesResponse">
+    <wsdl:part name="parameters" element="tns:getProcessInstancesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessForMonitor">
+    <wsdl:part name="parameters" element="tns:getProcessForMonitor" />
+  </wsdl:message>
+  <wsdl:message name="signalEvent">
+    <wsdl:part name="parameters" element="tns:signalEvent" />
+  </wsdl:message>
+  <wsdl:message name="upgradeProcessInstanceResponse">
+    <wsdl:part name="parameters" element="tns:upgradeProcessInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessDefinitionsForAdminResponse">
+    <wsdl:part name="parameters" element="tns:getProcessDefinitionsForAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="signalEventResponse">
+    <wsdl:part name="parameters" element="tns:signalEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="upgradeProcessInstance">
+    <wsdl:part name="parameters" element="tns:upgradeProcessInstance" />
+  </wsdl:message>
+  <wsdl:message name="executeWorkItemResponse">
+    <wsdl:part name="parameters" element="tns:executeWorkItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="newInstanceWithVars">
+    <wsdl:part name="parameters" element="tns:newInstanceWithVars" />
+  </wsdl:message>
+  <wsdl:message name="getNodeInstances">
+    <wsdl:part name="parameters" element="tns:getNodeInstances" />
+  </wsdl:message>
+  <wsdl:message name="getNodeInstancesResponse">
+    <wsdl:part name="parameters" element="tns:getNodeInstancesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessWithVariables">
+    <wsdl:part name="parameters" element="tns:getProcessWithVariables" />
+  </wsdl:message>
+  <wsdl:message name="findProcessIntances">
+    <wsdl:part name="parameters" element="tns:findProcessIntances" />
+  </wsdl:message>
+  <wsdl:message name="getHistoryOfProcess">
+    <wsdl:part name="parameters" element="tns:getHistoryOfProcess" />
+  </wsdl:message>
+  <wsdl:message name="findProcessIntancesPaginationResponse">
+    <wsdl:part name="parameters" element="tns:findProcessIntancesPaginationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActiveNodesInfoResponse">
+    <wsdl:part name="parameters" element="tns:getActiveNodesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessInstancesPaginationResponse">
+    <wsdl:part name="parameters" element="tns:getProcessInstancesPaginationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServiceConfiguration">
+    <wsdl:part name="parameters" element="tns:getServiceConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="getNodesOfProcessDefinitionResponse">
+    <wsdl:part name="parameters" element="tns:getNodesOfProcessDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServiceConfigurationResponse">
+    <wsdl:part name="parameters" element="tns:getServiceConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="findProcessIntancesResponse">
+    <wsdl:part name="parameters" element="tns:findProcessIntancesResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelProcessInstanceResponse">
+    <wsdl:part name="parameters" element="tns:cancelProcessInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActiveNodesInfo">
+    <wsdl:part name="parameters" element="tns:getActiveNodesInfo" />
+  </wsdl:message>
+  <wsdl:portType name="ProcessManagementServiceInterface">
+    <wsdl:operation name="getProcessDefinitionsForUser">
+      <wsdl:input name="getProcessDefinitionsForUser" message="tns:getProcessDefinitionsForUser" />
+      <wsdl:output name="getProcessDefinitionsForUserResponse" message="tns:getProcessDefinitionsForUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="upgradeProcessInstance">
+      <wsdl:input name="upgradeProcessInstance" message="tns:upgradeProcessInstance" />
+      <wsdl:output name="upgradeProcessInstanceResponse" message="tns:upgradeProcessInstanceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="executeWorkItem">
+      <wsdl:input name="executeWorkItem" message="tns:executeWorkItem" />
+      <wsdl:output name="executeWorkItemResponse" message="tns:executeWorkItemResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="newInstanceWithVars">
+      <wsdl:input name="newInstanceWithVars" message="tns:newInstanceWithVars" />
+      <wsdl:output name="newInstanceWithVarsResponse" message="tns:newInstanceWithVarsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getNodeInstances">
+      <wsdl:input name="getNodeInstances" message="tns:getNodeInstances" />
+      <wsdl:output name="getNodeInstancesResponse" message="tns:getNodeInstancesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcessInstances">
+      <wsdl:input name="getProcessInstances" message="tns:getProcessInstances" />
+      <wsdl:output name="getProcessInstancesResponse" message="tns:getProcessInstancesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="completeWorkItem">
+      <wsdl:input name="completeWorkItem" message="tns:completeWorkItem" />
+      <wsdl:output name="completeWorkItemResponse" message="tns:completeWorkItemResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcessWithVariables">
+      <wsdl:input name="getProcessWithVariables" message="tns:getProcessWithVariables" />
+      <wsdl:output name="getProcessWithVariablesResponse" message="tns:getProcessWithVariablesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findProcessIntances">
+      <wsdl:input name="findProcessIntances" message="tns:findProcessIntances" />
+      <wsdl:output name="findProcessIntancesResponse" message="tns:findProcessIntancesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getHistoryOfProcess">
+      <wsdl:input name="getHistoryOfProcess" message="tns:getHistoryOfProcess" />
+      <wsdl:output name="getHistoryOfProcessResponse" message="tns:getHistoryOfProcessResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findProcessIntancesPagination">
+      <wsdl:input name="findProcessIntancesPagination" message="tns:findProcessIntancesPagination" />
+      <wsdl:output name="findProcessIntancesPaginationResponse" message="tns:findProcessIntancesPaginationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcessInstancesPagination">
+      <wsdl:input name="getProcessInstancesPagination" message="tns:getProcessInstancesPagination" />
+      <wsdl:output name="getProcessInstancesPaginationResponse" message="tns:getProcessInstancesPaginationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getNodesOfProcessDefinition">
+      <wsdl:input name="getNodesOfProcessDefinition" message="tns:getNodesOfProcessDefinition" />
+      <wsdl:output name="getNodesOfProcessDefinitionResponse" message="tns:getNodesOfProcessDefinitionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelProcessInstance">
+      <wsdl:input name="cancelProcessInstance" message="tns:cancelProcessInstance" />
+      <wsdl:output name="cancelProcessInstanceResponse" message="tns:cancelProcessInstanceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcessDefinitionsForAdmin">
+      <wsdl:input name="getProcessDefinitionsForAdmin" message="tns:getProcessDefinitionsForAdmin" />
+      <wsdl:output name="getProcessDefinitionsForAdminResponse" message="tns:getProcessDefinitionsForAdminResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceConfiguration">
+      <wsdl:input name="getServiceConfiguration" message="tns:getServiceConfiguration" />
+      <wsdl:output name="getServiceConfigurationResponse" message="tns:getServiceConfigurationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcessImage">
+      <wsdl:input name="getProcessImage" message="tns:getProcessImage" />
+      <wsdl:output name="getProcessImageResponse" message="tns:getProcessImageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getProcessForMonitor">
+      <wsdl:input name="getProcessForMonitor" message="tns:getProcessForMonitor" />
+      <wsdl:output name="getProcessForMonitorResponse" message="tns:getProcessForMonitorResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getActiveNodesInfo">
+      <wsdl:input name="getActiveNodesInfo" message="tns:getActiveNodesInfo" />
+      <wsdl:output name="getActiveNodesInfoResponse" message="tns:getActiveNodesInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="signalEvent">
+      <wsdl:input name="signalEvent" message="tns:signalEvent" />
+      <wsdl:output name="signalEventResponse" message="tns:signalEventResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProcessManagementServiceSoapBinding" type="tns:ProcessManagementServiceInterface">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getProcessDefinitionsForUser">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getProcessDefinitionsForUser">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessDefinitionsForUserResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="upgradeProcessInstance">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="upgradeProcessInstance">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="upgradeProcessInstanceResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="executeWorkItem">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="executeWorkItem">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="executeWorkItemResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newInstanceWithVars">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="newInstanceWithVars">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="newInstanceWithVarsResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNodeInstances">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getNodeInstances">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getNodeInstancesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcessInstances">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getProcessInstances">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessInstancesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="completeWorkItem">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="completeWorkItem">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="completeWorkItemResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcessWithVariables">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getProcessWithVariables">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessWithVariablesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findProcessIntances">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="findProcessIntances">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findProcessIntancesResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHistoryOfProcess">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getHistoryOfProcess">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getHistoryOfProcessResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findProcessIntancesPagination">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="findProcessIntancesPagination">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="findProcessIntancesPaginationResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcessInstancesPagination">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getProcessInstancesPagination">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessInstancesPaginationResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNodesOfProcessDefinition">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getNodesOfProcessDefinition">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getNodesOfProcessDefinitionResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelProcessInstance">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="cancelProcessInstance">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="cancelProcessInstanceResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcessDefinitionsForAdmin">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getProcessDefinitionsForAdmin">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessDefinitionsForAdminResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceConfiguration">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getServiceConfiguration">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getServiceConfigurationResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcessImage">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getProcessImage">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessImageResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProcessForMonitor">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getProcessForMonitor">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessForMonitorResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActiveNodesInfo">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="getActiveNodesInfo">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getActiveNodesInfoResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="signalEvent">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input name="signalEvent">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="signalEventResponse">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProcessManagementService">
+    <wsdl:port name="ProcessManagementServicePort" binding="tns:ProcessManagementServiceSoapBinding">
+      <soap12:address location="http://dev-bpm.jus.gov.ar:8080/jus-bpm-core/ProcessManagementService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

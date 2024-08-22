@@ -1,0 +1,442 @@
+2024-06-24 09:49:34,852 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 09:50:58,436 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 09:51:54,009 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 09:54:37,215 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 09:59:41,751 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 10:11:36,671 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 10:33:27,177 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 10:47:25,295 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 10:51:34,833 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 10:51:38,784 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 10:59:42,390 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 11:03:23,410 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 11:03:59,968 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 11:06:58,223 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 11:11:01,978 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 11:22:04,651 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-1017: nombre de usuario/contraseña no válidos; conexión denegada
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 11:22:47,234 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-1017: nombre de usuario/contraseña no válidos; conexión denegada
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 11:24:20,715 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-1017: nombre de usuario/contraseña no válidos; conexión denegada
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 11:32:29,214 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-1017: nombre de usuario/contraseña no válidos; conexión denegada
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 11:39:29,260 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 41 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:41) Utils.Logger stack2024-06-24 12:02:26,051 ERROR System.Data.EntityException: Error del proveedor subyacente en Open. ---> Oracle.DataAccess.Client.OracleException: ORA-12170: TNS:Se ha producido un timeout de conexión
+   en Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   en Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, Object src)
+   en Oracle.DataAccess.Client.OracleConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, MergeOption mergeOption, Object[] parameters)
+   en System.Data.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQueryAsIEnumerable[TElement](String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalContext.ExecuteSqlQuery(Type elementType, String sql, Object[] parameters)
+   en System.Data.Entity.Internal.InternalSqlNonSetQuery.GetEnumerator()
+   en System.Data.Entity.Internal.InternalSqlQuery`1.GetEnumerator()
+   en System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   en Repositorio.UsuarioRepositorio.GetUsuarioFromDB(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 56
+   en Repositorio.UsuarioRepositorio.GetUsuario(String nombreUsuario) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Repositorio\UsuarioRepositorio.cs:línea 31
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 12:42:42,897 ERROR System.ArgumentNullException: El valor no puede ser nulo.
+Nombre del parámetro: String
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Int32.Parse(String s)
+   en Domain.Logics.TramiteLogic.GenerarTramiteGratuito(Int32 nroTramite, PresentacionTramite presentacion, Usuario usuario, String codTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 435
+   en Domain.Logics.TramiteLogic.IniciarTransaccion(Formulario formulario, Int32 nroTramite, Operacion operacion, PresentacionTramite presentacion, Usuario usuario, String codTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 372
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 12:42:42,927 ERROR System.ArgumentNullException: El valor no puede ser nulo.
+Nombre del parámetro: String
+   en Domain.Logics.TramiteLogic.IniciarTransaccion(Formulario formulario, Int32 nroTramite, Operacion operacion, PresentacionTramite presentacion, Usuario usuario, String codTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 396
+   en Domain.Logics.TramiteLogic.IniciarTransaccion(Int32 nroTramite, Operacion operacion, PresentacionTramite presentacion, Usuario usuario, String codTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 335
+   en Domain.Logics.TramiteLogic.IniciarTramiteNoPago(Int32 nroCorrelativo, String operador, String codigoTipoTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 255
+   en Services.TramiteService.IniciarTramiteNoPago(Int32 nroCorrelativo, String operador, String codigoTipoTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\TramiteService.cs:línea 113
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 12:45:00,245 ERROR System.ArgumentNullException: El valor no puede ser nulo.
+Nombre del parámetro: String
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Int32.Parse(String s)
+   en Domain.Logics.TramiteLogic.GenerarTramiteGratuito(Int32 nroTramite, PresentacionTramite presentacion, Usuario usuario, String codTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 435
+   en Domain.Logics.TramiteLogic.IniciarTransaccion(Formulario formulario, Int32 nroTramite, Operacion operacion, PresentacionTramite presentacion, Usuario usuario, String codTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 372
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 12:45:00,248 ERROR System.ArgumentNullException: El valor no puede ser nulo.
+Nombre del parámetro: String
+   en Domain.Logics.TramiteLogic.IniciarTransaccion(Formulario formulario, Int32 nroTramite, Operacion operacion, PresentacionTramite presentacion, Usuario usuario, String codTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 396
+   en Domain.Logics.TramiteLogic.IniciarTransaccion(Int32 nroTramite, Operacion operacion, PresentacionTramite presentacion, Usuario usuario, String codTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 335
+   en Domain.Logics.TramiteLogic.IniciarTramiteNoPago(Int32 nroCorrelativo, String operador, String codigoTipoTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 255
+   en Services.TramiteService.IniciarTramiteNoPago(Int32 nroCorrelativo, String operador, String codigoTipoTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\TramiteService.cs:línea 113
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 12:46:11,366 ERROR System.ArgumentNullException: El valor no puede ser nulo.
+Nombre del parámetro: String
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Int32.Parse(String s)
+   en Domain.Logics.TramiteLogic.GenerarTramiteGratuito(Int32 nroTramite, PresentacionTramite presentacion, Usuario usuario, String codTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 435
+   en Domain.Logics.TramiteLogic.IniciarTransaccion(Formulario formulario, Int32 nroTramite, Operacion operacion, PresentacionTramite presentacion, Usuario usuario, String codTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 372
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 12:46:11,391 ERROR System.ArgumentNullException: El valor no puede ser nulo.
+Nombre del parámetro: String
+   en Domain.Logics.TramiteLogic.IniciarTransaccion(Formulario formulario, Int32 nroTramite, Operacion operacion, PresentacionTramite presentacion, Usuario usuario, String codTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 396
+   en Domain.Logics.TramiteLogic.IniciarTransaccion(Int32 nroTramite, Operacion operacion, PresentacionTramite presentacion, Usuario usuario, String codTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 335
+   en Domain.Logics.TramiteLogic.IniciarTramiteNoPago(Int32 nroCorrelativo, String operador, String codigoTipoTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\TramiteLogic.cs:línea 255
+   en Services.TramiteService.IniciarTramiteNoPago(Int32 nroCorrelativo, String operador, String codigoTipoTramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\TramiteService.cs:línea 113
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack2024-06-24 13:05:15,649 ERROR Domain.Exceptions.GenericException: Tramite no apto para Contestacion de Vista
+   en Domain.Logics.VistaLogic.VerificarContestacionVista(Tramite tramite) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Dominio\Logics\VistaLogic.cs:línea 38
+   en Services.TramiteService.VerificarContestacionVista(Int32 nroTramite, Int32 nroCorrelativo) en c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Service\TramiteService.cs:línea 183
+ Utils.Logger c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs 42 Error Utils.Logger.Error(c:\Users\amalerba\Desktop\IGJMET_Ariel\IGJTramites\IGJMET\Utils\Logger.cs:42) Utils.Logger stack

@@ -1,0 +1,85 @@
+﻿@model Domain.Models.TramiteModel
+
+@{
+    var printer = Convert.ToBoolean(ViewData["Printer"]);
+
+}
+
+<!-- Modal -->
+<div class="modal fade" id="modal-panel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false" data-error="@Model.Resultado">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Datos de Entidad</h4>
+            </div>
+            <div id="modal-success" class="modal-body">
+                <em>@Model.Mensaje</em>
+            </div>
+        <div id="modal-danger" class="modal-body">
+            <em id="txt-msg">@Model.Mensaje</em>
+        </div>
+        <div class="modal-footer">
+            @if (printer && Model.Resultado == 0)
+            {
+                Html.RenderPartial("_PrinterPartial", Model);
+            }
+        </div>
+    </div>
+    <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#modal-success').hide();
+        $('#modal-danger').hide();
+
+        var pnlModal = $('#modal-panel');
+        if (pnlModal.attr('data-error') == '0') {
+            $('.modal-title').text('Tramite iniciado');
+            $('#modal-success').show();
+        }
+        else {
+            $('.modal-title').text('Error en la operacion');
+            $('#modal-danger').show();
+           
+        }
+        pnlModal.modal('show');
+
+    });
+
+    $('#modal-panel').on('hidden.bs.modal', function () {
+        redirect();
+    });
+
+    function cargando() {
+        $('#modal-panel').modal('hide');
+        $('#loading').modal('show');
+    }
+
+    function ok() {
+        mensaje('Se ha impreso la caratula con éxito');
+        redirect();
+    }
+
+    function err() {
+        mensaje('Se produjo un error en la impresión');
+    }
+
+    function mensaje(msg) {
+        $('#printer-container').hide();
+        $('.modal-title').text('Impresión Finalizada');
+        $('#txt-msg').text(msg);
+        $('#modal-danger').show();
+        $('#loading').modal('hide');
+        $('#modal-panel').modal('show');
+    }
+
+    function redirect() {
+        window.location.href = getCurrentPath();
+    }
+</script>

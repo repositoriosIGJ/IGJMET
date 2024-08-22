@@ -1,0 +1,123 @@
+﻿@model Domain.Models.ReporteModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="form-main" class="form-horizontal" method="post" role="form">
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend><h3>Reimpresión de Comprobante</h3></legend>
+       <div class="form-group">
+            <p class="text-left">En esta sección usted podrá reimprimir un comprobante de trámite segun el nro. de trimbrado o de trámite.
+             Para ello seleccione una opción e ingrese los datos a continuación</p>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-1 radio">
+              <label>
+                <input type="radio" name="tipoReporte" id="rdb-timbrado" value="formulario" checked>
+                Reimpresión por Nro. de timbrado
+              </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="radio col-lg-offset-1">
+              <label>
+                <input type="radio" name="tipoReporte" id="rdb-tramite" value="tramite">
+                Reimpresión por Nro. de trámite
+              </label>
+            </div>
+        </div>
+       <div class="form-group" id="timbrado">
+           <div class="col-lg-8 col-lg-offset-1">
+                <input type="text" name="codigoFormulario" id="formulario-text" class="form-control" placeholder="Ingrese el codigo de barra al pie del formulario" required>
+            </div>
+        </div>
+        <div class="form-group" id="tramit">
+           <div class="col-lg-8 col-lg-offset-1">
+                <input type="text" name="nroTramite" id="tramite-text" class="form-control" placeholder="Ingrese el nro. de trámite" required>
+            </div>
+        </div>         
+        <div class="form-group" id="pnl-submit">
+            <div class="col-lg-6 col-lg-offset-1">
+                <button type="submit" id="btn-submit" class="btn btn-default">Verificar Datos</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10" id="pnl-checked">
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+@if (Model != null)
+{
+    Html.RenderPartial("CaratulaResultadoPartial", Model);
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#form-main').validate(
+        {
+            errorClass: 'text-danger',
+            submitHandler: function (form) {
+                $('#loading').modal('show');
+                form.submit();
+            },
+            rules: {
+                nroTramite: {
+                    number: true,
+                    required: true,
+                    maxlength: 18
+                },
+                codigoFormulario: {
+                    minlength: 21,
+                    maxlength: 21,
+                    required: true,
+                }
+            },
+            messages: {
+                nroTramite: {
+                    required: "Campo requerido",
+                    number: "Debe ingresar un valor numerico",
+                    maxlength: "Debe ingresar un número de menor dígito"
+                },
+                codigoFormulario: {
+                    required: "Debe ingresar un código de 21 caracteres para continuar",
+                    minlength: "Debe ingresar un código de 21 caracteres para continuar",
+                    maxlength: "Debe ingresar un código de 21 caracteres para continuar"
+                }
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).parent().removeClass('has-success').addClass('has-error');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).parent().removeClass('has-error').addClass('has-success');
+            }
+        });
+
+        function option(id) {
+            if (id == 'rdb-timbrado') {
+                $('#rdb-tramite').attr('checked', false);
+                change('timbrado', 'tramit');
+            }
+            else {
+                $('#rdb-timbrado').attr('checked', false);
+                change('tramit', 'timbrado');
+            }
+        }
+
+        function change(toShow, toHide) {
+            $('#' + toHide).hide();
+            $('#' + toShow).show();
+            $('#' + toShow).focus();
+        }
+
+        $('input[type="radio"]').click(function () {
+            var id = $(this).attr('id');
+            option(id);
+        });
+
+        option('rdb-timbrado');
+    });
+</script>

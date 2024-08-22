@@ -1,0 +1,146 @@
+﻿@model Domain.Models.TramiteModel
+
+@{
+    var css = "";
+    var monto = decimal.Zero;
+}
+
+@if (Model.Resultado == 1)
+{
+    <!-- Modal -->
+    <div class="modal fade" id="modal-panel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Error en la Verificacion</h4>
+                </div>
+                <div id="modal-danger" class="modal-body">
+                    <label class="control-label">Descripcion:</label>
+                    <em id="txt-msg">@Model.Mensaje</em>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#modal-panel').modal('show');
+        });
+    </script>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <label class="text-left tab-title">Nro. de trámite ingresado:&nbsp;</label><em>@Model.NroTramite</em>
+        </div>
+        <div class="row">
+            <label class="text-left tab-title">Codigo de trámite:&nbsp;</label><em>@Model.CodTramite</em>
+        </div>
+
+        @if (Model.TipoTramite != null)
+        {
+            <div class="row">
+                <label class="text-left tab-title">Descripcion:&nbsp;</label><em>@Model.TipoTramite.Descripcion</em>
+            </div>
+        }
+
+        <ul class="nav nav-tabs" id="tab">
+            <li class="active">
+                <a href="#nav-sociedad" data-toggle="tab">
+                    <span class="glyphicon glyphicon-user"></span>
+                    Detalles Sociedad
+                </a></li>
+            <li>
+                <a href="#nav-timbrados" data-toggle="tab">
+                    <span class="glyphicon glyphicon-usd"></span>
+                    Timbrados
+                <span class="badge">@Model.Timbrados.Count</span>
+                </a>
+            </li>
+        </ul>
+
+
+        <div class="tab-content" id="tab-tramit">
+            <div id="nav-sociedad" class="container tab-pane active">
+                <form class="form-horizontal" role="form">
+                    @if (Model.Sociedad != null)
+                    {
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Nro Correlativo</label>
+                            <div class="col-sm-3">
+                                <p class="form-control-static">@Model.NroCorrelativo</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Nombre</label>
+                            <div class="col-sm-3">
+                                <p class="form-control-static">@Model.Sociedad.Nombre</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Tipo Sociedad</label>
+                            <div class="col-sm-3">
+                                <p class="form-control-static">@Model.Sociedad.TipoSociedad.Alias</p>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <h5>Sociedad Inexistente</h5>
+                        </div>
+                    }
+                </form>
+            </div>
+            <div id="nav-timbrados" class="tab-pane" role="grid">
+                <table id="tbl-tramit" class="table table-hover table-condensed ">
+                    <thead>
+                        <tr>
+                            <th>Codigo de Timbrado</th>
+                            <th>Tipo de Formulario</th>
+                            <th>Monto</th>
+                            <th>Estado</th>
+                            <th>Operador</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Timbrados)
+                        {
+                            if (item.EnUso())
+                            {
+                                css = "success";
+                            }
+                            else
+                            {
+                                css = "danger";
+                            }
+                            <tr class="@css">
+                                <td>@item.Formulario.CodBarra</td>
+                                <td>
+                                    <p class="text-center">@item.Formulario.TipoFormulario.Replace('.', ' ')</p>
+                                </td>
+                                <td>@item.Monto.ToString("0,0.00")</td>
+                                <td>@item.MostrarEstado()</td>
+                                <td>@User.Identity.Name</td>
+                                <td>@item.FechaActualizado</td>
+                            </tr>
+                        
+                            monto += item.Monto;
+                        }
+                    </tbody>
+                </table>
+                <div class="alert alert-info">
+                    <label class="control-label">Monto total del trámite: <span class="glyphicon glyphicon-usd"></span>@monto.ToString("0,0.00")</label>
+                </div>
+            </div>
+        </div>
+    </div>
+}

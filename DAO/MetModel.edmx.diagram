@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b81c6a8ec67a4029a3d8503d151da94f" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.OPERACION" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TIPOOPERACION" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TRANSACCION" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_TIPOOPERACIONID" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.REIMPRESIONES" Width="1.5" PointX="5.125" PointY="1.375" />
+        <EntityTypeShape EntityType="Model.ENTIDAD" Width="1.5" PointX="2.875" PointY="4.5" />
+        <EntityTypeShape EntityType="Model.TIPOENTIDAD" Width="1.5" PointX="5.25" PointY="4.625" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

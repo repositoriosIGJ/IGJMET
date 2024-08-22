@@ -1,0 +1,73 @@
+﻿@model Domain.Models.TramiteModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form-horizontal" method="post" role="form">
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>
+            <h3>Trámite Pago</h3>
+        </legend>
+        <div class="form-group">
+            <p class="text-left">
+                En esta secci&oacute;n usted podr&aacute; registrar el inicio de un tr&aacute;mite mediante la registraci&oacute;n de un timbrado.
+             Para ello ingrese los datos a continuaci&oacute;n
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="codigoFormulario" class="col-lg-3 control-label">C&oacute;digo del Timbrado:</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="codigoFormulario" name="codigoFormulario"
+                    placeholder="Ingrese el c&oacute;digo de barra al pie del formulario" required>
+            </div>
+        </div>
+        <div class="form-group" id="pnl-submit">
+            <div class="col-lg-offset-3 col-lg-10">
+                <button type="submit" id="btn-submit" class="btn btn-default">Confirmar</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10" id="pnl-checked">
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+@if (Model != null)
+{
+    Html.RenderPartial("TramiteResultadoPartial", Model, new ViewDataDictionary { { "Printer", true } });
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('form').validate(
+        {
+            submitHandler: function (form) {
+                $('#loading').modal('show');
+                form.submit();
+            },
+            errorClass: "text-danger",
+            rules: {
+                codigoFormulario: {
+                    minlength: 21,
+                    maxlength: 21,
+                    required: true,
+                }
+            },
+            messages: {
+                codigoFormulario: {
+                    required: "Debe ingresar un código de 21 caracteres para continuar",
+                    minlength: "Debe ingresar un código de 21 caracteres para continuar",
+                    maxlength: "Debe ingresar un código de 21 caracteres para continuar"
+                }
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).parent().removeClass('has-success').addClass('has-error');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).parent().removeClass('has-error').addClass('has-success');
+            }
+        });
+    });
+</script>
